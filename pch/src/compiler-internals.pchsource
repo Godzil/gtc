@@ -1,0 +1,10 @@
+#var __mulsi3
+#var __divsi3
+#var __modsi3
+#var __udivsi3
+#var __umodsi3
+#var __div_entry
+
+#var __mulsi3_rp
+#var __mulsi3ui2_rp
+#var __mulsi3si2_rp

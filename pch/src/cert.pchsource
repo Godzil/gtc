@@ -1,0 +1,27 @@
+
+#var H_NULL D(0)
+#var NULL D(((void*)0))
+#var FALSE D(0)
+#var TRUE D(1)
+
+#var CERT_FIELD typedef struct{unsigned short Field;unsigned short HdrLen;unsigned long Len;void*Data;}CERT_FIELD;
+#var CFILE typedef struct{void*Start,*Pos,*End;short EOFVal;}CFILE;
+#var HANDLE typedef unsigned short HANDLE;
+#var size_t typedef unsigned long size_t;
+#var ceof D(_rom_call(short,(CFILE*),128))
+#var cfindfield D(_rom_call(short,(CFILE*,short,CERT_FIELD*),12A))
+#var cgetc D(_rom_call(unsigned char,(CFILE*),12B))
+#var cgetcertrevno D(_rom_call(short,(__plong),2A0))
+#var cgetflen D(_rom_call(unsigned long,(CFILE*,short),12D))
+#var cgetfnl D(_rom_call(long,(CERT_FIELD*),12E))
+#var cgetnl D(_rom_call(long,(CFILE*),12F))
+#var cgetns D(_rom_call(short,(CFILE*),130))
+#var cgetsn D(_rom_call(void,(char*),2A1))
+#var copen D(_rom_call(void,(CFILE*,char*,long),132))
+#var copensub D(_rom_call(void,(CFILE*,CERT_FIELD*),133))
+#var cputhdr D(_rom_call(short,(CFILE*,short,short),134))
+#var cputnl D(_rom_call(void,(CFILE*,long),135))
+#var cputns D(_rom_call(void,(CFILE*,short),136))
+#var cread D(_rom_call(short,(CFILE*,CERT_FIELD*),137))
+#var ctell D(_rom_call(unsigned long,(CFILE*),138))
+#var cwrite D(_rom_call(short,(CFILE*,CERT_FIELD*),139))

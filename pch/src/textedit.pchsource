@@ -1,0 +1,29 @@
+
+#var FALSE D(0)
+#var TRUE D(1)
+
+#var HANDLE typedef unsigned short HANDLE;
+#var SCR_RECT typedef union{struct{unsigned char x0,y0,x1,y1;}xy;unsigned long l;}SCR_RECT;
+#var SCR_STATE typedef struct{void*ScrAddr;unsigned char XMax,YMax;short CurFont,CurAttr,CurX,CurY;SCR_RECT CurClip;}SCR_STATE;
+#var WIN_RECT typedef struct{short x0,y0,x1,y1;}WIN_RECT;
+#var WINDOW typedef struct WindowStruct{unsigned short Flags;unsigned char CurFont;unsigned char CurAttr;unsigned char Background;short TaskId;short CurX,CurY;short CursorX,CursorY;SCR_RECT Client;SCR_RECT Window;SCR_RECT Clip;SCR_RECT Port;unsigned short DupScr;struct WindowStruct*Next;char*Title;SCR_STATE savedScrState;unsigned char Reserved[16];}WINDOW;
+#var EVENT typedef struct EventStruct{unsigned short Type;unsigned short RunningApp;unsigned short Side;unsigned short StatusFlags;union{WINDOW*w;WIN_RECT*r;char*pasteText;HANDLE hPasteText;struct{unsigned short Mod;unsigned short Code;}Key;}extra;unsigned char StartType;}EVENT;
+#var size_t typedef unsigned long size_t;
+#var TEXT_EDIT typedef struct TextEditStruct{WINDOW*Parent;unsigned short ReadOnly;WIN_RECT Rect;unsigned short BufSize;unsigned short CurSize;unsigned short CursorOffset;unsigned short StartOffset;unsigned short PreChars;unsigned short CharWidth;unsigned short CharHeight;unsigned short LineNum;unsigned short CursorX;unsigned short Flags;union{HANDLE h;const char*p;}Text;}TEXT_EDIT;
+#var TE_checkSlack D(_rom_call(void,(TEXT_EDIT*),A6))
+#var TE_close D(_rom_call(void,(TEXT_EDIT*),A5))
+#var TE_empty D(_rom_call(void,(TEXT_EDIT*),A7))
+#var TE_focus D(_rom_call(short,(TEXT_EDIT*),A8))
+#var TE_handleEvent D(_rom_call(short,(TEXT_EDIT*,EVENT*),A9))
+#var TE_indicateReadOnly D(_rom_call(void,(TEXT_EDIT*),AA))
+#var TE_isBlank D(_rom_call(short,(TEXT_EDIT*),AB))
+#var TE_open D(_rom_call(short,(TEXT_EDIT*,WINDOW*,WIN_RECT*,HANDLE,short,short,short),AC))
+#var TE_openFixed D(_rom_call(short,(TEXT_EDIT*,WINDOW*,WIN_RECT*,char*,short,short),AD))
+#var TE_pasteText D(_rom_call(void,(TEXT_EDIT*,const char*,long),AE))
+#var TE_reopen D(_rom_call(void,(TEXT_EDIT*,short),AF))
+#var TE_reopenPlain D(_rom_call(void,(TEXT_EDIT*,short),B0))
+#var TE_select D(_rom_call(void,(TEXT_EDIT*,short,short),B1))
+#var TE_shrinkWrap D(_rom_call(HANDLE,(TEXT_EDIT*),B2))
+#var TE_unfocus D(_rom_call(short,(TEXT_EDIT*),B3))
+#var TE_updateCommand D(_rom_call(void,(TEXT_EDIT*,char),B4))
+

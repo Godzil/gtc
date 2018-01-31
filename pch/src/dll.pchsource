@@ -1,0 +1,26 @@
+#var __DLL_SIGNATURE D(0x444C4C20)
+#var __DLL_interface_struct typedef struct{unsigned long Signature,ID;unsigned short major,minor;void*jump_table[];}__DLL_interface_struct;
+
+#var DLL_OK D(0)
+#var DLL_NOTINGHOSTSPACE D(1)
+#var DLL_NOTFOUND D(2)
+#var DLL_LOCKFAILED D(3)
+#var DLL_OUTOFMEM D(4)
+#var DLL_ALREADYLOADED D(5)
+#var DLL_WRONGVERSION D(6)
+
+#sys __DLL_interface_ptr extern __DLL_interface_struct*__DLL_interface_ptr;
+#sys __DLL_body_ptr extern void*__DLL_body_ptr;
+#var _DLL_call(type,args,index) D((*(type(*)args)_DLL_entry(index)))
+#var _DLL_call_attr(type,args,attr,index) D((*(type(*attr)args)_DLL_entry(index)))
+#var _DLL_entry(index) D((__DLL_interface_ptr->jump_table[index]))
+#var _DLL_glbvar(type,index) D((*(_DLL_reference(type,index))))
+#var _DLL_reference(type,index) D(((type*const)_DLL_entry(index)))
+#var LoadDLL short LoadDLL(const char*,long,short,short)__ATTR_LIB_C__;
+#var LoadDLLThrow void LoadDLLThrow(const char*,long,short,short)__ATTR_LIB_C__;
+#var UnloadDLL void UnloadDLL(void)__ATTR_LIB_C__;
+#var DLL_EXPORTS D(,{)
+#var DLL_ID D(__DLL_interface_struct __DLL_interface={__DLL_SIGNATURE,)
+#var DLL_IMPLEMENTATION D(,(void*)-1L}};)
+#var DLL_INTERFACE #define _nostub_dll
+#var DLL_VERSION D(,)

@@ -1,0 +1,600 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.7	//
+ACB	gtdev-apphdr.h	/^} ACB;$/;"	t	typeref:struct:SACB
+ACB_BG	gtdev-apphdr.h	/^   ACB_BG        =0x1000,$/;"	e	enum:__anon17
+ACB_BUILTIN	gtdev-apphdr.h	/^   ACB_BUILTIN   =0x0001,$/;"	e	enum:__anon17
+ACB_COLLAPSE	gtdev-apphdr.h	/^   ACB_COLLAPSE  =0x0800,$/;"	e	enum:__anon17
+ACB_COMPRESS	gtdev-apphdr.h	/^   ACB_COMPRESS  =0x4000,$/;"	e	enum:__anon17
+ACB_DELETE	gtdev-apphdr.h	/^   ACB_DELETE    =0x8000$/;"	e	enum:__anon17
+ACB_Flags	gtdev-apphdr.h	/^} ACB_Flags;$/;"	t	typeref:enum:__anon17
+ACB_INSTALLED	gtdev-apphdr.h	/^   ACB_INSTALLED =0x0002,$/;"	e	enum:__anon17
+ACB_JT_VERSION	gtdev-apphdr.h	/^   ACB_JT_VERSION=0x0010,$/;"	e	enum:__anon17
+ACB_LOCALIZER	gtdev-apphdr.h	/^   ACB_LOCALIZER =0x0004,$/;"	e	enum:__anon17
+ACB_LOCK	gtdev-apphdr.h	/^   ACB_LOCK      =0x0008,$/;"	e	enum:__anon17
+ACB_SELECTED	gtdev-apphdr.h	/^   ACB_SELECTED  =0x0020,$/;"	e	enum:__anon17
+APPHDR_FLAGS	gtdev-apphdr.h	/^typedef enum {APPHDR_LOCALIZER=0x0001} APPHDR_FLAGS;$/;"	t	typeref:enum:__anon15
+APPHDR_LOCALIZER	gtdev-apphdr.h	/^typedef enum {APPHDR_LOCALIZER=0x0001} APPHDR_FLAGS;$/;"	e	enum:__anon15
+APP_ACCESS_SYSVARS	gtdev-apphdr.h	/^              APP_ACCESS_SYSVARS=4,$/;"	e	enum:__anon18
+APP_BACKGROUND	gtdev-apphdr.h	/^              APP_BACKGROUND=8}$/;"	e	enum:__anon18
+APP_CON	gtdev-apphdr.h	/^              APP_CON=2,$/;"	e	enum:__anon18
+APP_EXTENSION	gtdev-apphdr.h	/^} APP_EXTENSION;$/;"	t	typeref:struct:SAppExtension
+APP_EXT_ENTRY	gtdev-apphdr.h	/^} APP_EXT_ENTRY;$/;"	t	typeref:struct:SAppExtEntry
+APP_EXT_FUNC	gtdev-apphdr.h	/^typedef void (* APP_EXT_FUNC)(void);$/;"	t
+APP_EXT_FUNCTION	gtdev-apphdr.h	/^enum {APP_EXT_PROGRAM=0x0000, APP_EXT_FUNCTION=0x0001};$/;"	e	enum:__anon16
+APP_EXT_PROGRAM	gtdev-apphdr.h	/^enum {APP_EXT_PROGRAM=0x0000, APP_EXT_FUNCTION=0x0001};$/;"	e	enum:__anon16
+APP_Flags	gtdev-apphdr.h	/^        APP_Flags;$/;"	t	typeref:enum:__anon18
+APP_INTERACTIVE	gtdev-apphdr.h	/^              APP_INTERACTIVE=1,$/;"	e	enum:__anon18
+APP_NONE	gtdev-apphdr.h	/^typedef enum {APP_NONE=0,$/;"	e	enum:__anon18
+ASM_SECTION_FONT	display.h	177;"	d
+ATTR	gtdev-apphdr.h	57;"	d
+AppHdr	gtdev-apphdr.h	/^} AppHdr;$/;"	t	typeref:struct:SAppHdr
+AppID	gtdev-apphdr.h	/^typedef int AppID;$/;"	t
+BATCH_COMPILE	main.c	6;"	d	file:
+B_CENTER	display.h	517;"	d
+B_MOVEAROUND	display.h	516;"	d
+CALCULATOR	main.c	89;"	d	file:
+CALCULATOR	main.c	91;"	d	file:
+CALCULATOR	main.c	94;"	d	file:
+CF_ASM	edit.h	/^	CF_C=0x4, CF_ASM=0x8, CF_LIBFUNCS=0x10,$/;"	e	enum:__anon8
+CF_C	edit.h	/^	CF_C=0x4, CF_ASM=0x8, CF_LIBFUNCS=0x10,$/;"	e	enum:__anon8
+CF_DECL	edit.h	/^	CF_GLOBAL=0x20, CF_DECL=0x40,$/;"	e	enum:__anon8
+CF_EXPR	edit.h	/^	CF_EXPR=0x80, CF_STMT=0x100,$/;"	e	enum:__anon8
+CF_GLOBAL	edit.h	/^	CF_GLOBAL=0x20, CF_DECL=0x40,$/;"	e	enum:__anon8
+CF_LIBFUNCS	edit.h	/^	CF_C=0x4, CF_ASM=0x8, CF_LIBFUNCS=0x10,$/;"	e	enum:__anon8
+CF_PREPROC	edit.h	/^	CF_TYPE=0x1, CF_PREPROC=0x2,$/;"	e	enum:__anon8
+CF_STMT	edit.h	/^	CF_EXPR=0x80, CF_STMT=0x100,$/;"	e	enum:__anon8
+CF_TYPE	edit.h	/^	CF_TYPE=0x1, CF_PREPROC=0x2,$/;"	e	enum:__anon8
+CHAR	display.h	/^typedef char CHAR[char_height];$/;"	t
+Catalog	editui.h	/^char *Catalog() {$/;"	f
+CharDlg	editui.h	/^char CharDlg() {$/;"	f
+CompUnderWay	edit.h	/^int CompUnderWay=0;$/;"	v
+Compile	gtdev-plugins.h	/^int Compile(char *in_file,int plugin) {$/;"	f
+DChar	display.h	446;"	d
+DCharS	display.h	447;"	d
+DCharX	display.h	448;"	d
+DEFINE_XPLOOP_CB	axplore.h	/^DEFINE_XPLOOP_CB(onlyfiles_callback) {$/;"	f
+DEFINE_XPLOOP_CB	axplore.h	/^DEFINE_XPLOOP_CB(std_callback) {$/;"	f
+DEFINE_XPLOOP_CB	axplore.h	114;"	d
+DEFINE_XPLOOP_CB	workspace.h	/^DEFINE_XPLOOP_CB(callback) {$/;"	f
+DLG_ICON	editui.h	/^typedef long DLG_ICON[8];$/;"	t
+DNARR	display.h	318;"	d
+DOTS	display.h	314;"	d
+DOTS1	display.h	315;"	d
+DOTS2	display.h	316;"	d
+DStr	display.h	449;"	d
+DStrS	display.h	450;"	d
+DlgIcons	editui.h	/^DLG_ICON DlgIcons[4]={$/;"	v
+DoSearch	dialogs.h	/^int DoSearch() {$/;"	f
+DrawFrame	display.h	/^void DrawFrame(int x0,int y0,int x1,int y1) {$/;"	f
+DrawMenuBar	display.h	/^void DrawMenuBar() {$/;"	f
+DrawSStr	axplore.h	2;"	d
+DrawStatus	edit.h	/^void DrawStatus() {$/;"	f
+DrawText	editui.h	/^void DrawText(char *p,int x,int y,int w,int h0,int hM,int *wp,int *hp,int draw) {$/;"	f
+DrawVLine	editui.h	/^void DrawVLine(void *p,int x,int y1,int y2,int a) {$/;"	f
+EDEX_COMPILE	edit.h	/^enum { EDEX_NONE=0, EDEX_COMPILE };$/;"	e	enum:__anon7
+EDEX_NONE	edit.h	/^enum { EDEX_NONE=0, EDEX_COMPILE };$/;"	e	enum:__anon7
+EDH_proc	textedit.h	/^int EDH_proc=0;$/;"	v
+EDIT_LINE	editui.h	/^} EDIT_LINE;$/;"	t	typeref:struct:__anon9
+ENDFRAME	gtdev-apphdr.h	59;"	d
+ET_ERROR	gtdev-plugins.h	7;"	d
+ET_ERROR	plugins.h	9;"	d
+ET_FATAL	gtdev-plugins.h	5;"	d
+ET_FATAL	plugins.h	7;"	d
+ET_INTERNAL_FAILURE	gtdev-plugins.h	9;"	d
+ET_INTERNAL_FAILURE	plugins.h	11;"	d
+ET_INTERNAL_WARNING	gtdev-plugins.h	8;"	d
+ET_INTERNAL_WARNING	plugins.h	10;"	d
+ET_WARNING	gtdev-plugins.h	6;"	d
+ET_WARNING	plugins.h	8;"	d
+Edit	editor.h	/^void Edit(char *text_path) {$/;"	f
+FILENAME	workspace.h	/^typedef char FILENAME[8+1+8+1];$/;"	t
+FONT_MEDIUM	display.h	/^enum { FONT_MEDIUM = 0, FONT_SMALL = 1 };$/;"	e	enum:__anon5
+FONT_SMALL	display.h	/^enum { FONT_MEDIUM = 0, FONT_SMALL = 1 };$/;"	e	enum:__anon5
+FRAME	gtdev-apphdr.h	46;"	d
+FindDlg	display.h	/^void FindDlg() {$/;"	f
+FindFile	files.h	/^HANDLE FindFile(char *f) {$/;"	f
+FixAutoint	autoint_fix.h	/^void FixAutoint() {$/;"	f
+Frame	gtdev-apphdr.h	/^} Frame;$/;"	t	typeref:struct:SFrame
+FreeMem	edit.h	/^void FreeMem() {$/;"	f
+GTC_Compile	gtdev-plugins.h	14;"	d
+GTC_IDE	main.c	54;"	d	file:
+GetAppSecureTable	gtdev-securecomm.h	/^SecureTab *GetAppSecureTable(char *name) {$/;"	f
+GetFTString	files.h	/^char *GetFTString(HANDLE h) {$/;"	f
+GetIFT	files.h	/^int GetIFT(HANDLE h) {$/;"	f
+HANDLER	textedit.h	/^typedef int (*HANDLER)(int);$/;"	t
+HD2	main.c	97;"	d	file:
+ICO_ERROR	editui.h	/^enum { ICO_WARN=0x8, ICO_ERROR=0x9, ICO_INFO=0xA, ICO_QUEST=0xB, ICO_MASK=0xF, ICO_RMASK=0x7 };$/;"	e	enum:__anon10
+ICO_INFO	editui.h	/^enum { ICO_WARN=0x8, ICO_ERROR=0x9, ICO_INFO=0xA, ICO_QUEST=0xB, ICO_MASK=0xF, ICO_RMASK=0x7 };$/;"	e	enum:__anon10
+ICO_MASK	editui.h	/^enum { ICO_WARN=0x8, ICO_ERROR=0x9, ICO_INFO=0xA, ICO_QUEST=0xB, ICO_MASK=0xF, ICO_RMASK=0x7 };$/;"	e	enum:__anon10
+ICO_QUEST	editui.h	/^enum { ICO_WARN=0x8, ICO_ERROR=0x9, ICO_INFO=0xA, ICO_QUEST=0xB, ICO_MASK=0xF, ICO_RMASK=0x7 };$/;"	e	enum:__anon10
+ICO_RMASK	editui.h	/^enum { ICO_WARN=0x8, ICO_ERROR=0x9, ICO_INFO=0xA, ICO_QUEST=0xB, ICO_MASK=0xF, ICO_RMASK=0x7 };$/;"	e	enum:__anon10
+ICO_WARN	editui.h	/^enum { ICO_WARN=0x8, ICO_ERROR=0x9, ICO_INFO=0xA, ICO_QUEST=0xB, ICO_MASK=0xF, ICO_RMASK=0x7 };$/;"	e	enum:__anon10
+IFTIcons	files.h	/^int IFTIcons[]={$/;"	v
+IFT_C	files.h	/^	IFT_OTH, IFT_TEXT, IFT_RES, IFT_C, IFT_H, IFT_PRGM, IFT_FUNC, IFT_XFUNC,$/;"	e	enum:__anon11
+IFT_EXPR	files.h	/^	IFT_PACK \/* (?) *\/, IFT_EXPR,$/;"	e	enum:__anon11
+IFT_FUNC	files.h	/^	IFT_OTH, IFT_TEXT, IFT_RES, IFT_C, IFT_H, IFT_PRGM, IFT_FUNC, IFT_XFUNC,$/;"	e	enum:__anon11
+IFT_H	files.h	/^	IFT_OTH, IFT_TEXT, IFT_RES, IFT_C, IFT_H, IFT_PRGM, IFT_FUNC, IFT_XFUNC,$/;"	e	enum:__anon11
+IFT_INVALID	files.h	/^	IFT_INVALID=0,$/;"	e	enum:__anon11
+IFT_OTH	files.h	/^	IFT_OTH, IFT_TEXT, IFT_RES, IFT_C, IFT_H, IFT_PRGM, IFT_FUNC, IFT_XFUNC,$/;"	e	enum:__anon11
+IFT_PACK	files.h	/^	IFT_PACK \/* (?) *\/, IFT_EXPR,$/;"	e	enum:__anon11
+IFT_PRGM	files.h	/^	IFT_OTH, IFT_TEXT, IFT_RES, IFT_C, IFT_H, IFT_PRGM, IFT_FUNC, IFT_XFUNC,$/;"	e	enum:__anon11
+IFT_RES	files.h	/^	IFT_OTH, IFT_TEXT, IFT_RES, IFT_C, IFT_H, IFT_PRGM, IFT_FUNC, IFT_XFUNC,$/;"	e	enum:__anon11
+IFT_TEXT	files.h	/^	IFT_OTH, IFT_TEXT, IFT_RES, IFT_C, IFT_H, IFT_PRGM, IFT_FUNC, IFT_XFUNC,$/;"	e	enum:__anon11
+IFT_XFUNC	files.h	/^	IFT_OTH, IFT_TEXT, IFT_RES, IFT_C, IFT_H, IFT_PRGM, IFT_FUNC, IFT_XFUNC,$/;"	e	enum:__anon11
+IS_OO_HANDLE	gtdev-apphdr.h	6;"	d
+InitSearch	dialogs.h	/^void InitSearch() {$/;"	f
+IntVec	autoint_fix.h	49;"	d
+IntVec	autoint_fix.h	91;"	d
+KA_MOD	edit.h	592;"	d
+KA_MOD	edit.h	594;"	d
+KEY_2ND	edit.h	553;"	d
+KEY_APPS	edit.h	552;"	d
+KEY_CATALOG	edit.h	551;"	d
+KEY_DMD	edit.h	554;"	d
+KEY_DMD	edit.h	587;"	d
+KEY_DMD	edit.h	589;"	d
+KEY_DMD	edit.h	626;"	d
+KEY_DMD	edit.h	628;"	d
+KEY_F0	editui.h	157;"	d
+KEY_HOME	edit.h	550;"	d
+KEY_SHF	edit.h	555;"	d
+KEY_SHF	edit.h	588;"	d
+KEY_SHF	edit.h	590;"	d
+KEY_SHF	edit.h	627;"	d
+KEY_SHF	edit.h	629;"	d
+KEY_STO	edit.h	548;"	d
+KEY_UMINUS	edit.h	547;"	d
+KeyProcess	handlers.h	/^void KeyProcess(int key,int tmode) {$/;"	f
+LIMITS_H_	limits.h	3;"	d
+MAKE_OO_HANDLE	gtdev-apphdr.h	4;"	d
+MAXH	editui.h	125;"	d
+MAX_APPLET_NAME_SIZE	gtdev-apphdr.h	60;"	d
+MAX_BLOCK1	autoint_fix.h	7;"	d
+MAX_BLOCK2	autoint_fix.h	8;"	d
+MAX_CURWORD	edit.h	13;"	d
+MAX_MATCH	edit.h	362;"	d
+MAX_OPEN_PCH	limits.h	5;"	d
+MAX_PCHDATA_SIZE	limits.h	8;"	d
+MAX_PROGRESS	gtdev-plugins.h	12;"	d
+MAX_TEXT_LINENUM	editui.h	124;"	d
+MIN_AMS	main.c	47;"	d	file:
+MIN_AMS	main.c	49;"	d	file:
+MK_TAG	gtdev-securecomm.h	23;"	d
+MK_TAG2	gtdev-securecomm.h	22;"	d
+MY_ACB	gtdev-apphdr.h	111;"	d
+MY_APP_ID	gtdev-apphdr.h	112;"	d
+MediumDStr	display.h	/^void xregparm(2,2,1) MediumDStr(int x,int y,char *s) {$/;"	f
+MediumDStrC	display.h	/^void xregparm(3,3,1) MediumDStrC(int x,int y,char *s,int w) {$/;"	f
+MediumDStrCS	display.h	/^void xregparm(3,3,1) MediumDStrCS(int x,int y,char *s,int w) {$/;"	f
+MediumDStrS	display.h	/^void xregparm(3,3,1) MediumDStrS(int x,int y,char *s,int w) {$/;"	f
+MenuBar	display.h	/^long MenuBar[5*8]={$/;"	v
+MenuBar	display.h	/^long MenuBar[8*8]={$/;"	v
+MenuContents	display.h	/^char **MenuContents=0;$/;"	v
+Msg_Callback_t	gtdev-plugins.h	/^typedef void CALLBACK (*Msg_Callback_t)(char *message,int err_type,char *func,char *file,int line,int chr);$/;"	t
+NDEBUG	main.c	44;"	d	file:
+NEED_DEBUG_MSG	gtdev-plugins.h	22;"	d
+NEWLINE	edit.h	8;"	d
+NLINES	edit.h	/^int YMAX=0,NLINES=0;$/;"	v
+NMENU	display.h	618;"	d
+NMENU	display.h	631;"	d
+NOT_MEMORY	display.h	575;"	d
+NUM_DEFLTTYPE	workspace.h	11;"	d
+ONE_CALC	main.c	12;"	d	file:
+OO_APPSTRING	gtdev-apphdr.h	115;"	d
+OO_APP_MAGIC	gtdev-apphdr.h	1;"	d
+OO_Attr	gtdev-apphdr.h	/^} OO_Attr;$/;"	t	typeref:struct:__anon13
+OO_FIRST_APP_ATTR	gtdev-apphdr.h	116;"	d
+OO_FIRST_APP_STRING	gtdev-apphdr.h	114;"	d
+OO_FIRST_STRING	gtdev-apphdr.h	113;"	d
+OO_Flags	gtdev-apphdr.h	/^              OO_SEQ=0, OO_KEYED=2} OO_Flags;$/;"	t	typeref:enum:__anon12
+OO_GET_HANDLE	gtdev-apphdr.h	5;"	d
+OO_HANDLE	gtdev-apphdr.h	2;"	d
+OO_Hdr	gtdev-apphdr.h	/^} OO_Hdr;$/;"	t	typeref:struct:SFrameHdr
+OO_KEYED	gtdev-apphdr.h	/^              OO_SEQ=0, OO_KEYED=2} OO_Flags;$/;"	e	enum:__anon12
+OO_MethodPtr	gtdev-apphdr.h	/^typedef void (* const OO_MethodPtr)(void);$/;"	t
+OO_RO	gtdev-apphdr.h	/^typedef enum {OO_RW=0,  OO_RO=1,$/;"	e	enum:__anon12
+OO_RW	gtdev-apphdr.h	/^typedef enum {OO_RW=0,  OO_RO=1,$/;"	e	enum:__anon12
+OO_SEQ	gtdev-apphdr.h	/^              OO_SEQ=0, OO_KEYED=2} OO_Flags;$/;"	e	enum:__anon12
+OO_SYSTEM_FRAME	gtdev-apphdr.h	3;"	d
+OR_VAL	editui.h	267;"	d
+OSKeyScan	autoint_fix.h	2;"	d
+Off	edit.h	/^void Off() {$/;"	f
+PCHREAD_CB	pchutil.h	/^typedef char *(*PCHREAD_CB)(char *name,char *args,char *defn,char *proto,char *trueproto,char *param);$/;"	t
+PEDROM	main.c	23;"	d	file:
+PLUGIN_GTBASIC	gtdev-plugins.h	1;"	d
+PLUGIN_GTC	gtdev-plugins.h	2;"	d
+POP	edit.h	447;"	d
+POP	editui.h	252;"	d
+PUSH	edit.h	446;"	d
+PUSH	editui.h	251;"	d
+PU_HANDLER	edit.h	/^PU_HANDLER (editMsg) {$/;"	f
+PU_HANDLER	editui.h	/^PU_HANDLER (catHelp) {$/;"	f
+PU_HANDLER	editui.h	/^PU_HANDLER (catMsg) {$/;"	f
+PU_HANDLER	pchutil.h	3;"	d
+PchUnpack	pchutil.h	6;"	d
+PchUnpackP	pchutil.h	7;"	d
+PluginName	gtdev-plugins.h	3;"	d
+PopScr	display.h	/^void PopScr() {$/;"	f
+Port	display.h	/^void *Port=0;$/;"	v
+Progr_Callback_t	gtdev-plugins.h	/^typedef void CALLBACK (*Progr_Callback_t)(char *func,char *file,unsigned int fprogress);$/;"	t
+PushScr	display.h	/^void PushScr() {$/;"	f
+PutLine	display.h	/^void PutLine(void *src,int y) {$/;"	f
+RELEASE	main.c	18;"	d	file:
+RestoreAutoint	autoint_fix.h	/^void RestoreAutoint() {$/;"	f
+SACB	gtdev-apphdr.h	/^typedef struct SACB$/;"	s
+SAVE_SCREEN	main.c	15;"	d	file:
+SAppExtEntry	gtdev-apphdr.h	/^typedef struct SAppExtEntry$/;"	s
+SAppExtension	gtdev-apphdr.h	/^typedef struct SAppExtension$/;"	s
+SAppHdr	gtdev-apphdr.h	/^typedef struct SAppHdr$/;"	s
+SCROLL	util.h	/^} SCROLL;$/;"	t	typeref:struct:__anon20
+SDLG_ALL	dialogs.h	/^enum { SDLG_WW=0x1, SDLG_CS=0x2, SDLG_SA=0x4, SDLG_ALL=0x40, SDLG_REPL=0x80, };$/;"	e	enum:__anon4
+SDLG_BUF_SIZE	dialogs.h	39;"	d
+SDLG_BUF_SIZE	display.h	562;"	d
+SDLG_CS	dialogs.h	/^enum { SDLG_WW=0x1, SDLG_CS=0x2, SDLG_SA=0x4, SDLG_ALL=0x40, SDLG_REPL=0x80, };$/;"	e	enum:__anon4
+SDLG_LEFT_MARGIN	dialogs.h	40;"	d
+SDLG_NUM_OPTS	dialogs.h	41;"	d
+SDLG_REPL	dialogs.h	/^enum { SDLG_WW=0x1, SDLG_CS=0x2, SDLG_SA=0x4, SDLG_ALL=0x40, SDLG_REPL=0x80, };$/;"	e	enum:__anon4
+SDLG_SA	dialogs.h	/^enum { SDLG_WW=0x1, SDLG_CS=0x2, SDLG_SA=0x4, SDLG_ALL=0x40, SDLG_REPL=0x80, };$/;"	e	enum:__anon4
+SDLG_WW	dialogs.h	/^enum { SDLG_WW=0x1, SDLG_CS=0x2, SDLG_SA=0x4, SDLG_ALL=0x40, SDLG_REPL=0x80, };$/;"	e	enum:__anon4
+SEARCH_FUNC	editui.h	349;"	d
+SECTION_FONT	display.h	178;"	d
+SECTION_FONT	display.h	47;"	d
+SEQ	edit.h	522;"	d
+SFrame	gtdev-apphdr.h	/^typedef struct SFrame$/;"	s
+SFrameHdr	gtdev-apphdr.h	/^typedef struct SFrameHdr$/;"	s
+STRING_ATTR	gtdev-apphdr.h	58;"	d
+STRING_FRAME	gtdev-apphdr.h	35;"	d
+ST_flagsL	main.c	/^unsigned int ST_flagsL=0;$/;"	v
+ST_flagsL	main.c	77;"	d	file:
+ScrRectFill2	display.h	/^void ScrRectFill2(SCR_RECT *scr,int attr) {$/;"	f
+ScrollChg	util.h	6;"	d
+ScrollChgWrapOnlyAtEnd	util.h	/^void ScrollChgWrapOnlyAtEnd(SCROLL *s,int d) {$/;"	f
+ScrollDn	util.h	8;"	d
+ScrollHasDnArrow	util.h	10;"	d
+ScrollHasUpArrow	util.h	9;"	d
+ScrollInit	util.h	5;"	d
+ScrollUp	util.h	7;"	d
+ScrollUpd	util.h	/^void ScrollUpd(SCROLL *s) {$/;"	f
+ScrollUpdNoWrap	util.h	/^void ScrollUpdNoWrap(SCROLL *s) {				\/* same as ScrollUpd, but doesn't wrap *\/$/;"	f
+ScrollUpdNoWrapDots	util.h	/^void ScrollUpdNoWrapDots(SCROLL *s) {		\/* same as ScrollUpdNoWrap, but leaves 1 blank on the border *\/$/;"	f
+SearchDlg	dialogs.h	/^int SearchDlg(int rep) {$/;"	f
+SimpleDlg	editui.h	/^int SimpleDlg(char *title,char *text,int attr,int wattr) {$/;"	f
+SmallDStr	display.h	/^void xregparm(2,2,1) SmallDStr(int x,int y,char *s) {$/;"	f
+SmallDStrC	display.h	/^void xregparm(3,3,1) SmallDStrC(int x,int y,char *s,int w) {$/;"	f
+SmallDStrCS	display.h	/^void xregparm(3,3,1) SmallDStrCS(int x,int y,char *s,int w) {$/;"	f
+SmallDStrS	display.h	/^void xregparm(3,3,1) SmallDStrS(int x,int y,char *s,int w) {$/;"	f
+TAB	edit.h	21;"	d
+TBAR_HEIGHT	edit.h	181;"	d
+TBarDisp	edit.h	/^void TBarDisp() {$/;"	f
+TITLEBAR	main.c	9;"	d	file:
+TI_LONG	main.c	/^typedef unsigned long TI_LONG;$/;"	t	file:
+TI_SHORT	main.c	/^typedef unsigned short TI_SHORT;$/;"	t	file:
+TM_DIALOG	handlers.h	/^	TM_MULTILINE=0x1, TM_DIALOG=0x2,$/;"	e	enum:__anon19
+TM_MULTILINE	handlers.h	/^	TM_MULTILINE=0x1, TM_DIALOG=0x2,$/;"	e	enum:__anon19
+UPARR	display.h	317;"	d
+USE_TI89	main.c	32;"	d	file:
+USE_TI92PLUS	main.c	37;"	d	file:
+USE_V200	main.c	38;"	d	file:
+VariableDChar	display.h	444;"	d
+VariableDCharS	display.h	445;"	d
+VariableDStr	display.h	/^void xregparm(2,2,1) VariableDStr(int x,int y,char *s) {$/;"	f
+VariableDStr	display.h	440;"	d
+VariableDStrC	display.h	/^void xregparm(3,3,1) VariableDStrC(int x,int y,char *s,int w) {$/;"	f
+VariableDStrC	display.h	442;"	d
+VariableDStrCS	display.h	/^void xregparm(3,3,1) VariableDStrCS(int x,int y,char *s,int w) {$/;"	f
+VariableDStrCS	display.h	443;"	d
+VariableDStrS	display.h	/^void xregparm(3,3,1) VariableDStrS(int x,int y,char *s,int w) {$/;"	f
+VariableDStrS	display.h	441;"	d
+WFILE	workspace.h	/^} WFILE;$/;"	t	typeref:struct:__anon22
+WFOLD	workspace.h	/^} WFOLD;$/;"	t	typeref:struct:__anon23
+WIDTH	edit.h	4;"	d
+WIDTH	edit.h	6;"	d
+WITEM	workspace.h	/^} WITEM;$/;"	t	typeref:union:__anon24
+WI_FILE	workspace.h	/^enum { WI_FOLD=0, WI_FILE };$/;"	e	enum:__anon21
+WI_FOLD	workspace.h	/^enum { WI_FOLD=0, WI_FILE };$/;"	e	enum:__anon21
+WSP	workspace.h	/^} WSP;$/;"	t	typeref:struct:__anon25
+WSPT_GAME	workspace.h	/^enum { WSPT_SIMPLE=0, WSPT_GAME=1, WSPT_UTIL=2, WSPT_OTHER=3 };$/;"	e	enum:__anon26
+WSPT_OTHER	workspace.h	/^enum { WSPT_SIMPLE=0, WSPT_GAME=1, WSPT_UTIL=2, WSPT_OTHER=3 };$/;"	e	enum:__anon26
+WSPT_SIMPLE	workspace.h	/^enum { WSPT_SIMPLE=0, WSPT_GAME=1, WSPT_UTIL=2, WSPT_OTHER=3 };$/;"	e	enum:__anon26
+WSPT_UTIL	workspace.h	/^enum { WSPT_SIMPLE=0, WSPT_GAME=1, WSPT_UTIL=2, WSPT_OTHER=3 };$/;"	e	enum:__anon26
+WSP_MAX_ITEMS	workspace.h	40;"	d
+W_ALLOW_F1	display.h	/^	W_ALLOW_F1=0x10<<1, W_ALLOW_F2=0x10<<2, W_ALLOW_F3=0x10<<3, W_ALLOW_F4=0x10<<4, W_ALLOW_F5=0x10<<5,$/;"	e	enum:__anon6
+W_ALLOW_F2	display.h	/^	W_ALLOW_F1=0x10<<1, W_ALLOW_F2=0x10<<2, W_ALLOW_F3=0x10<<3, W_ALLOW_F4=0x10<<4, W_ALLOW_F5=0x10<<5,$/;"	e	enum:__anon6
+W_ALLOW_F3	display.h	/^	W_ALLOW_F1=0x10<<1, W_ALLOW_F2=0x10<<2, W_ALLOW_F3=0x10<<3, W_ALLOW_F4=0x10<<4, W_ALLOW_F5=0x10<<5,$/;"	e	enum:__anon6
+W_ALLOW_F4	display.h	/^	W_ALLOW_F1=0x10<<1, W_ALLOW_F2=0x10<<2, W_ALLOW_F3=0x10<<3, W_ALLOW_F4=0x10<<4, W_ALLOW_F5=0x10<<5,$/;"	e	enum:__anon6
+W_ALLOW_F5	display.h	/^	W_ALLOW_F1=0x10<<1, W_ALLOW_F2=0x10<<2, W_ALLOW_F3=0x10<<3, W_ALLOW_F4=0x10<<4, W_ALLOW_F5=0x10<<5,$/;"	e	enum:__anon6
+W_NOKEY	display.h	/^	W_NOKEY=0x10,$/;"	e	enum:__anon6
+W_NORMAL	display.h	/^	W_NORMAL=0,$/;"	e	enum:__anon6
+WaitLoop	editui.h	/^int WaitLoop(int *blink) {$/;"	f
+WspAddFile	workspace.h	/^int WspAddFile(char *file,char *dfold) {$/;"	f
+WspAddFold	workspace.h	/^int WspAddFold(char *fold) {$/;"	f
+WspAddItem	workspace.h	/^WITEM *WspAddItem(int i) {$/;"	f
+WspFindItem	workspace.h	/^int WspFindItem(char *wi_name,int wi_type,int i) {$/;"	f
+WspFindNearItem	workspace.h	/^int WspFindNearItem(char *wi_name,int wi_type,int i) {$/;"	f
+WspNew	workspace.h	/^void WspNew() {$/;"	f
+WspPromptSave	workspace.h	/^void WspPromptSave() {$/;"	f
+WspSave	workspace.h	/^void WspSave() {$/;"	f
+WspShowBrowser	workspace.h	/^void WspShowBrowser() {$/;"	f
+X	main.c	33;"	d	file:
+X	main.c	39;"	d	file:
+XPLCB_BREAK	axplore.h	/^enum { XPLCB_CONT=0, XPLCB_QUIT=-1, XPLCB_BREAK=1, XPLCB_OPENDIR=2 };$/;"	e	enum:__anon3
+XPLCB_CONT	axplore.h	/^enum { XPLCB_CONT=0, XPLCB_QUIT=-1, XPLCB_BREAK=1, XPLCB_OPENDIR=2 };$/;"	e	enum:__anon3
+XPLCB_OPENDIR	axplore.h	/^enum { XPLCB_CONT=0, XPLCB_QUIT=-1, XPLCB_BREAK=1, XPLCB_OPENDIR=2 };$/;"	e	enum:__anon3
+XPLCB_QUIT	axplore.h	/^enum { XPLCB_CONT=0, XPLCB_QUIT=-1, XPLCB_BREAK=1, XPLCB_OPENDIR=2 };$/;"	e	enum:__anon3
+XP_C	axplore.h	/^} XP_C;$/;"	t	typeref:struct:__anon2
+XP_H	axplore.h	71;"	d
+XP_N	axplore.h	70;"	d
+XP_S	axplore.h	/^} XP_S;$/;"	t	typeref:struct:__anon1
+XP_X1	axplore.h	68;"	d
+XP_X2	axplore.h	69;"	d
+XpDisp	axplore.h	/^void XpDisp(XP_C *xc,int y) {$/;"	f
+XpFatSub	axplore.h	/^long XpFatSub(XP_S *xs,char *acc,char *cfold) {$/;"	f
+XpLoadFat	axplore.h	/^XP_C *XpLoadFat(char *cfold) {$/;"	f
+XpLoadItems	files.h	/^XP_C *XpLoadItems(int filter) {$/;"	f
+XpLoadList	axplore.h	/^XP_C *XpLoadList(char **list,int n) {$/;"	f
+XpLoop	axplore.h	/^XP_S *XpLoop(XP_C *xc,int y,XPLOOP_CB callback,void *ctx) {$/;"	f
+XpMove	axplore.h	/^int XpMove(XP_C *xc,int n) {$/;"	f
+XpNeg	axplore.h	/^void XpNeg(XP_C *xc) {$/;"	f
+XpSprite	axplore.h	/^char XpSprite[8*5]={$/;"	v
+Y	main.c	34;"	d	file:
+Y	main.c	40;"	d	file:
+YMAX	edit.h	/^int YMAX=0,NLINES=0;$/;"	v
+YesNoDlg	editui.h	/^int YesNoDlg(char *title,char *text) {$/;"	f
+_89_92	main.c	92;"	d	file:
+_89_92	main.c	95;"	d	file:
+__UNAVAILABLE_CHAR__	font.h	1;"	d
+_main	main.c	/^void _main(void) {$/;"	f
+_ti89	main.c	/^char _ti89[0],_ti92plus[0];$/;"	v
+_ti92plus	main.c	/^char _ti89[0],_ti92plus[0];$/;"	v
+ac_disp	edit.h	/^int ac_on=0,ac_disp=0;$/;"	v
+ac_display	edit.h	/^void ac_display(int has_sel) {$/;"	f
+ac_do	edit.h	/^void ac_do() {$/;"	f
+ac_on	edit.h	/^int ac_on=0,ac_disp=0;$/;"	v
+ac_s	edit.h	/^SCROLL ac_s={0,0,0,0};$/;"	v
+add_all_pch	edit.h	/^void add_all_pch() {$/;"	f
+add_pch	edit.h	/^int add_pch(char *name) {$/;"	f
+appData	gtdev-apphdr.h	/^   pFrame appData;$/;"	m	struct:SACB
+appHeader	gtdev-apphdr.h	/^   AppHdr const *appHeader;$/;"	m	struct:SACB
+attr	gtdev-apphdr.h	/^   } attr;$/;"	m	struct:SFrame	typeref:union:SFrame::__anon14
+autoint_fix	autoint_fix.h	/^void *autoint_fix=0,*autoint_previous=0;$/;"	v
+autoint_fix_block	autoint_fix.h	/^int autoint_fix_block[(MAX_BLOCK1+MAX_BLOCK2)\/2];$/;"	v
+autoint_previous	autoint_fix.h	/^void *autoint_fix=0,*autoint_previous=0;$/;"	v
+boxDisp	dialogs.h	/^void boxDisp(EDIT_LINE *e,$/;"	f
+boxProcess	dialogs.h	/^void boxProcess(EDIT_LINE *e,int key) {$/;"	f
+buf	editui.h	/^	char *buf;$/;"	m	struct:__anon9
+cBKD	edit.h	/^int cKID=200,cBKD=35;$/;"	v
+cKID	edit.h	/^int cKID=200,cBKD=35;$/;"	v
+calc	main.c	/^int calc=0;$/;"	v
+cat_list	editui.h	/^void cat_list(SCROLL *s,char **match,int x,int w,int y) {$/;"	f
+cat_prep	editui.h	/^int cat_prep(int MM,char **match,char **mdata) {$/;"	f
+cat_retbuf	editui.h	/^char cat_retbuf[80];$/;"	v
+catmatch	edit.h	/^char **catmatch=0; int catnum=0;$/;"	v
+catnum	edit.h	/^char **catmatch=0; int catnum=0;$/;"	v
+certhdr	gtdev-apphdr.h	/^   BYTE const *certhdr;$/;"	m	struct:SACB
+char_height	display.h	/^int char_height = 0;$/;"	v
+char_height	display.h	7;"	d
+char_width	display.h	/^int char_width = 0;$/;"	v
+char_width	display.h	5;"	d
+charmap	edit.h	/^char charmap[]=$/;"	v
+checkProcess	dialogs.h	/^int checkProcess(int v,int a,int key) {$/;"	f
+chk_curword	edit.h	/^int chk_curword(char *curword,unsigned int pos,int store_cwpos) {$/;"	f
+close_pch	edit.h	/^void close_pch(void) {$/;"	f
+codeOffset	gtdev-apphdr.h	/^   ULONG codeOffset;$/;"	m	struct:SAppHdr
+count	gtdev-apphdr.h	/^   ULONG count;$/;"	m	struct:SFrameHdr
+cpos	edit.h	/^unsigned int spos=0,cpos=0,curpos=0,selpos=0,sel1=0,sel2=0,size=0,hsize=0\/*,is_nl=0*\/;$/;"	v
+cs	edit.h	369;"	d
+cs	edit.h	377;"	d
+curFileExt	edit.h	/^char curFileName[8+1],curFileExt[4+1],curFileFullName[17+1];$/;"	v
+curFileFullName	edit.h	/^char curFileName[8+1],curFileExt[4+1],curFileFullName[17+1];$/;"	v
+curFileName	edit.h	/^char curFileName[8+1],curFileExt[4+1],curFileFullName[17+1];$/;"	v
+curFileNum	edit.h	/^int numOpenFiles=0,curFileNum=0;$/;"	v
+curpos	edit.h	/^unsigned int spos=0,cpos=0,curpos=0,selpos=0,sel1=0,sel2=0,size=0,hsize=0\/*,is_nl=0*\/;$/;"	v
+curword	edit.h	/^char *msg=0,curword[MAX_CURWORD+1]={0},parword[MAX_CURWORD+1]={0};$/;"	v
+cwpos	edit.h	/^unsigned int par1=0,par2=0,cwpos=0;$/;"	v
+d	axplore.h	/^	void *d;$/;"	m	struct:__anon1
+d	workspace.h	/^	WFOLD d;$/;"	m	union:__anon24
+dHandle	textedit.h	/^int dHandle(int key) {$/;"	f
+dataLen	gtdev-apphdr.h	/^   ULONG dataLen;$/;"	m	struct:SAppHdr
+debug_msg	editui.h	/^void debug_msg(char *s) {$/;"	f
+deflttype	workspace.h	/^	int deflttype[NUM_DEFLTTYPE];$/;"	m	struct:__anon23
+delEditLine	editui.h	/^int delEditLine(EDIT_LINE *e,int n) {$/;"	f
+dialog	display.h	/^void dialog(char *title,int width,int height,int attr,WIN_RECT *w) {$/;"	f
+disp_box	display.h	/^int disp_box(int x1,int x2,int height,int attr,WIN_RECT *win) {$/;"	f
+display	edit.h	/^void display(int z) {$/;"	f
+down	edit.h	/^unsigned int down(unsigned int pos,int xd) {$/;"	f
+drawCheckBox	editui.h	/^void drawCheckBox(char *s,int v,int f,int x,int y,int inactive) {$/;"	f
+drawEditLine	editui.h	/^void drawEditLine(EDIT_LINE *e,int inactive,int blink) {$/;"	f
+dual_memmove4_plus4	editui.h	/^void __attribute__((__regparm__(3))) dual_memmove4_plus4(long *p,long *r,int n) {$/;"	f
+editor_exit_requested	edit.h	/^int editor_exit_requested=0;$/;"	v
+et_isinternal	gtdev-plugins.h	10;"	d
+even	edit.h	/^int even(unsigned int pos) {$/;"	f
+expanded	workspace.h	/^	int expanded;$/;"	m	struct:__anon23
+extension	gtdev-apphdr.h	/^   APP_EXT_FUNC extension;$/;"	m	struct:SAppExtEntry
+f	workspace.h	/^	WFILE f;$/;"	m	union:__anon24
+first	gtdev-apphdr.h	/^   ULONG first;$/;"	m	struct:SFrameHdr
+flags	editui.h	/^int flags(char *p) {$/;"	f
+flags	gtdev-apphdr.h	/^   OO_Flags flags;$/;"	m	struct:SFrameHdr
+flags	gtdev-apphdr.h	/^   USHORT flags;$/;"	m	struct:SACB
+flags	gtdev-apphdr.h	/^   USHORT flags;$/;"	m	struct:SAppHdr
+flags	gtdev-apphdr.h	/^   unsigned short flags;$/;"	m	struct:SAppExtEntry
+foldname	workspace.h	/^	char foldname[8+1];$/;"	m	struct:__anon25
+font	display.h	/^const unsigned short SECTION_FONT font[]={$/;"	v
+getEditLinePos	editui.h	65;"	d
+get_keylist	edit.h	/^int *get_keylist() {$/;"	f
+get_zone	edit.h	/^int get_zone(unsigned int pos) {$/;"	f
+go_down	edit.h	/^unsigned int go_down() {$/;"	f
+h	util.h	/^	int sel,scr,h,n;$/;"	m	struct:__anon20
+handler	textedit.h	/^HANDLER handler=0;$/;"	v
+hd	edit.h	/^char *tptr=0; HANDLE hd=0;$/;"	v
+hdx	editor.h	29;"	d
+head	gtdev-apphdr.h	/^   OO_Hdr head;$/;"	m	struct:SFrame
+help	gtdev-apphdr.h	/^   unsigned long help;$/;"	m	struct:SAppExtension
+hsize	edit.h	/^unsigned int spos=0,cpos=0,curpos=0,selpos=0,sel1=0,sel2=0,size=0,hsize=0\/*,is_nl=0*\/;$/;"	v
+i	axplore.h	/^	int i,t;$/;"	m	struct:__anon1
+icons	display.h	/^char icons[]={$/;"	v
+identity	editui.h	369;"	d
+iname	workspace.h	/^	char iname[8+1];$/;"	m	struct:__anon25
+index	gtdev-apphdr.h	/^   unsigned short index;$/;"	m	struct:SAppExtension
+initDataLen	gtdev-apphdr.h	/^   ULONG initDataLen;$/;"	m	struct:SAppHdr
+initDataOffset	gtdev-apphdr.h	/^   ULONG initDataOffset;$/;"	m	struct:SAppHdr
+init_calc	main.c	/^void init_calc() {$/;"	f
+insEditLine	editui.h	/^int insEditLine(EDIT_LINE *e,int n) {$/;"	f
+insert	edit.h	/^void insert(int n) {$/;"	f
+is_c_idch	dialogs.h	104;"	d
+is_nl	edit.h	20;"	d
+isidch	edit.h	288;"	d
+isnum	edit.h	291;"	d
+items	workspace.h	/^	WITEM items[0];$/;"	m	struct:__anon25
+kbdq	main.c	/^void *kbdq=0;$/;"	v
+key	gtdev-apphdr.h	/^   ULONG key;$/;"	m	struct:__anon13
+key89	edit.h	/^int key89[]={$/;"	v
+key92	edit.h	/^int key92[]={$/;"	v
+last_act	edit.h	/^int last_act=0;$/;"	v
+letter_comp	editui.h	367;"	d
+linebegin	edit.h	/^unsigned int __attribute__((__regparm__(1))) linebegin(unsigned int pos) {$/;"	f
+loaded	workspace.h	/^	int loaded;$/;"	m	struct:__anon25
+magic	gtdev-apphdr.h	/^   ULONG magic;$/;"	m	struct:SAppHdr
+match	edit.h	/^char *match[MAX_MATCH]={0};$/;"	v
+memmove4_plus4	editui.h	/^void __attribute__((__regparm__(2))) memmove4_plus4(long *p,int n) {$/;"	f
+memquit	main.c	/^void memquit() {$/;"	f
+message_cb	plugins.h	/^void CALLBACK message_cb(char *message,int err_type,char *func,char *file,int line,int chr) {$/;"	f
+msel	axplore.h	/^	int sh,sel,msel;$/;"	m	struct:__anon2
+msg	edit.h	/^char *msg=0,curword[MAX_CURWORD+1]={0},parword[MAX_CURWORD+1]={0};$/;"	v
+msgBuf	edit.h	/^char msgBuf[58+1]; \/* max string length on 92\/V200 is 240\/4-2=58 *\/$/;"	v
+myID	gtdev-apphdr.h	/^   AppID myID;$/;"	m	struct:SACB
+n	util.h	/^	int sel,scr,h,n;$/;"	m	struct:__anon20
+name	gtdev-apphdr.h	/^   UCHAR name[MAX_APPLET_NAME_SIZE];$/;"	m	struct:SAppHdr
+name	gtdev-apphdr.h	/^   unsigned long name;$/;"	m	struct:SAppExtension
+name	workspace.h	/^	FILENAME name;$/;"	m	struct:__anon22
+need_go_down	edit.h	/^int need_go_down() {$/;"	f
+newEditLine	editui.h	/^void newEditLine(EDIT_LINE *e,char *buf,int sz,int x0,int x1,int y) {$/;"	f
+next	gtdev-apphdr.h	/^   AppID next;$/;"	m	struct:SACB
+nitems	workspace.h	/^	int nitems;$/;"	m	struct:__anon25
+nmatch	edit.h	/^int nmatch=0;$/;"	v
+nonwhite	edit.h	/^char * __attribute__((__regparm__(1))) nonwhite(char *p) {$/;"	f
+numOpenFiles	edit.h	/^int numOpenFiles=0,curFileNum=0;$/;"	v
+onopen_gotofile	editor.h	/^char *onopen_gotofile=NULL;$/;"	v
+onopen_gotoline	editor.h	/^int onopen_gotoline=-1;$/;"	v
+open	workspace.h	/^	int open;$/;"	m	struct:__anon22
+openhd	workspace.h	/^	HANDLE openhd;$/;"	m	struct:__anon22
+optlen	gtdev-apphdr.h	/^   ULONG optlen;$/;"	m	struct:SAppHdr
+pFrame	gtdev-apphdr.h	/^typedef ULONG pFrame;$/;"	t
+pFrame	gtdev-apphdr.h	14;"	d
+pad	workspace.h	/^	char pad[32];$/;"	m	union:__anon24
+pair	edit.h	557;"	d
+pair	edit.h	559;"	d
+pair	edit.h	560;"	d
+pair	edit.h	562;"	d
+pair	edit.h	597;"	d
+pair	edit.h	599;"	d
+pair	edit.h	600;"	d
+pair	edit.h	602;"	d
+pair	gtdev-apphdr.h	/^      OO_Attr pair[65000];$/;"	m	union:SFrame::__anon14
+par1	edit.h	/^unsigned int par1=0,par2=0,cwpos=0;$/;"	v
+par2	edit.h	/^unsigned int par1=0,par2=0,cwpos=0;$/;"	v
+parent	gtdev-apphdr.h	/^   pFrame parent;$/;"	m	struct:SFrameHdr
+parword	edit.h	/^char *msg=0,curword[MAX_CURWORD+1]={0},parword[MAX_CURWORD+1]={0};$/;"	v
+pch_help	edit.h	/^		char *pch_help(char *p,char *p0) {$/;"	f
+pch_read	pchutil.h	/^char *pch_read(char *p,char *p0,PCHREAD_CB cb,char *cbparam) {$/;"	f
+pch_search	edit.h	/^char *pch_search(char *curword,int ac_test,int MM,char **match) { \/* match may be NULL if ac_test is 0 *\/$/;"	f
+pch_unpack	editui.h	/^		char *pch_unpack(char *p,char *p0) {$/;"	f
+pch_unpack2	editui.h	/^		char *pch_unpack2(char *p,char *p0) {$/;"	f
+pchdata	edit.h	/^char *pchdata[MAX_OPEN_PCH];$/;"	v
+pchfile	edit.h	/^FILE *pchfile[MAX_OPEN_PCH];$/;"	v
+pchhead	edit.h	323;"	d
+pchhead	edit.h	324;"	d
+pchnum	edit.h	/^int pchnum = 0;$/;"	v
+physical_to_virtual	display.h	/^int physical_to_virtual(int px) {$/;"	f
+physical_to_virtual	display.h	8;"	d
+prettyname	workspace.h	/^	char prettyname[32];$/;"	m	struct:__anon25
+prev	gtdev-apphdr.h	/^   AppID prev;$/;"	m	struct:SACB
+progr_cb	plugins.h	/^void CALLBACK progr_cb(char *func,char *file,unsigned int fprogress) {$/;"	f
+prototype	gtdev-apphdr.h	/^   pFrame prototype;$/;"	m	struct:SFrameHdr
+publicstorage	gtdev-apphdr.h	/^   ULONG publicstorage;$/;"	m	struct:SACB
+q89	main.c	35;"	d	file:
+q89	main.c	41;"	d	file:
+repeated	editui.h	/^int repeated=0;	\/\/ was the last key repeated?$/;"	v
+s	axplore.h	/^	XP_S *s;$/;"	m	struct:__anon2
+sUnpack	sunpack.c	/^char *sUnpack(char *in,char *out,char *dic) {$/;"	f
+sUnpackBuf	main.c	/^char sUnpackBuf[500];$/;"	v
+scr	editui.h	/^	SCROLL scr;$/;"	m	struct:__anon9
+scr	util.h	/^	int sel,scr,h,n;$/;"	m	struct:__anon20
+scr_sptr	display.h	/^LCD_BUFFER *scr_stk[8],**scr_sptr=0;$/;"	v
+scr_stk	display.h	/^LCD_BUFFER *scr_stk[8],**scr_sptr=0;$/;"	v
+search	edit.h	454;"	d
+search	edit.h	494;"	d
+search_attr	dialogs.h	/^int search_attr=0;$/;"	v
+search_attr	workspace.h	/^	int search_attr;$/;"	m	struct:__anon25
+search_coord	dialogs.h	/^int search_coord=0;$/;"	v
+sel	axplore.h	/^	int sh,sel,msel;$/;"	m	struct:__anon2
+sel	util.h	/^	int sel,scr,h,n;$/;"	m	struct:__anon20
+sel1	edit.h	/^unsigned int spos=0,cpos=0,curpos=0,selpos=0,sel1=0,sel2=0,size=0,hsize=0\/*,is_nl=0*\/;$/;"	v
+sel2	edit.h	/^unsigned int spos=0,cpos=0,curpos=0,selpos=0,sel1=0,sel2=0,size=0,hsize=0\/*,is_nl=0*\/;$/;"	v
+sel_del	edit.h	/^void sel_del() {$/;"	f
+selpos	edit.h	/^unsigned int spos=0,cpos=0,curpos=0,selpos=0,sel1=0,sel2=0,size=0,hsize=0\/*,is_nl=0*\/;$/;"	v
+set_font	display.h	/^void set_font(int font) {$/;"	f
+sh	axplore.h	/^	int sh,sel,msel;$/;"	m	struct:__anon2
+size	edit.h	/^unsigned int spos=0,cpos=0,curpos=0,selpos=0,sel1=0,sel2=0,size=0,hsize=0\/*,is_nl=0*\/;$/;"	v
+small_font	display.h	/^int small_font = -1;$/;"	v
+spos	edit.h	/^unsigned int spos=0,cpos=0,curpos=0,selpos=0,sel1=0,sel2=0,size=0,hsize=0\/*,is_nl=0*\/;$/;"	v
+ssort	edit.h	/^void ssort(char **match,int n) {$/;"	f
+strcmpindiff	editui.h	/^int strcmpindiff(char *a,char *b) {$/;"	f
+strtolower	util.h	/^void strtolower(char *s) {$/;"	f
+sz	editui.h	/^	int sz;$/;"	m	struct:__anon9
+t	axplore.h	/^	int i,t;$/;"	m	struct:__anon1
+tHandle	textedit.h	/^int tHandle(int key) {$/;"	f
+tab_chk	edit.h	/^int tab_chk(unsigned int pos) {$/;"	f
+tab_chk_l	edit.h	23;"	d
+tab_chk_l	edit.h	52;"	d
+tab_chk_r	edit.h	24;"	d
+tab_chk_r	edit.h	53;"	d
+temp_wsp	workspace.h	/^char temp_wsp[sizeof(WSP)+WSP_MAX_ITEMS*sizeof(WITEM)];$/;"	v
+text_enclose	edit.h	/^void text_enclose(char *l,char *r) {$/;"	f
+text_find	dialogs.h	/^char text_find[SDLG_BUF_SIZE],text_repl[SDLG_BUF_SIZE];$/;"	v
+text_repl	dialogs.h	/^char text_find[SDLG_BUF_SIZE],text_repl[SDLG_BUF_SIZE];$/;"	v
+title	workspace.h	/^	char title[24];$/;"	m	struct:__anon23
+toindiff	editui.h	357;"	d
+tptr	edit.h	/^char *tptr=0; HANDLE hd=0;$/;"	v
+type	workspace.h	/^	int type;	\/\/ =WI_FILE$/;"	m	struct:__anon22
+type	workspace.h	/^	int type;	\/\/ =WI_FOLD$/;"	m	struct:__anon23
+type	workspace.h	/^	int type;$/;"	m	struct:__anon25
+type	workspace.h	/^	int type;$/;"	m	union:__anon24
+up	edit.h	/^unsigned int up(unsigned int pos,int xd) {$/;"	f
+updEditLine	editui.h	/^void updEditLine(EDIT_LINE *e) {	\/* to be called when buffer content changes *\/$/;"	f
+valid	edit.h	160;"	d
+value	gtdev-apphdr.h	/^      void *value[65000];$/;"	m	union:SFrame::__anon14
+value	gtdev-apphdr.h	/^   void *value;$/;"	m	struct:__anon13
+view_cursor	edit.h	/^void view_cursor() {$/;"	f
+virtual_char_width	display.h	/^int virtual_char_width = 0;$/;"	v
+virtual_char_width	display.h	6;"	d
+virtual_to_physical	display.h	/^int virtual_to_physical(int vx) {$/;"	f
+virtual_to_physical	display.h	9;"	d
+w	editui.h	/^	int x0,y,w;$/;"	m	struct:__anon9
+whitespace	edit.h	/^int whitespace(unsigned int pos,unsigned int maxpos) {$/;"	f
+win	editui.h	/^	WIN_RECT win;$/;"	m	struct:__anon9
+write_until	pchutil.h	/^char *write_until(char *d,char **s,char c) {$/;"	f
+wsp	workspace.h	/^WSP *wsp=0;$/;"	v
+wzChoice	dialogs.h	/^int wzChoice(char *prompt,char **choice,int choicen,int *dest) {$/;"	f
+wzChoiceDeflt	dialogs.h	/^int wzChoiceDeflt(char *prompt,char **choice,int choicen,int *dest,int v) {$/;"	f
+wzDone	dialogs.h	/^void wzDone(char *text) {$/;"	f
+wzErr	dialogs.h	233;"	d
+wzList	dialogs.h	232;"	d
+wzStart	dialogs.h	/^void wzStart(char *title,char *numSteps) {$/;"	f
+wzStep	dialogs.h	154;"	d
+wzStepPtr	dialogs.h	/^char *wzStepPtr=0;$/;"	v
+wzSuccess	dialogs.h	/^int wzSuccess=0;$/;"	v
+wzText	dialogs.h	/^int wzText(char *prompt,char *dest,int n) {$/;"	f
+wzTextClr	dialogs.h	/^int wzTextClr(char *prompt,char *dest,int n) {$/;"	f
+wzTitle	dialogs.h	/^char wzTitle[40];$/;"	v
+x0	editui.h	/^	int x0,y,w;$/;"	m	struct:__anon9
+xcur	edit.h	/^int xcur=0\/*,ycur=0*\/;$/;"	v
+xps_sel	axplore.h	137;"	d
+xregparm	display.h	39;"	d
+xregparm	display.h	44;"	d
+y	editui.h	/^	int x0,y,w;$/;"	m	struct:__anon9
+ycur	display.h	/^int ycur=0;$/;"	v
+zeros	gtdev-apphdr.h	/^   BYTE  zeros[24];$/;"	m	struct:SAppHdr

@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+<head>
+	<title>Specificities of GTC - GTC documentation</title>
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+	<link rel='stylesheet' type='text/css' href='layout/default.css' />
+</head>
+<body>
+<p><a href='index.html'>◄ Back to index</a></p>
+<div class='c0'>
+<h1>Specificities of GTC</h1>
+<div class='toc'><div class='toctop'><div class='tocbot'><div class='toc-content'>
+<b>Contents:</b><ul>
+  <li><a href='#Application.binary.interface..28ABI.29'>Application binary interface (ABI)</a>
+  <ul>
+    <li><a href='#Calling.convention'>Calling convention</a>
+    <ul>
+      <li><a href='#Default.calling.convention..28regparm.29'>Default calling convention (regparm)</a></li>
+      <li><a href='#AMS.calling.convention..28stkparm.29'>AMS calling convention (stkparm)</a></li>
+    </ul></li>
+  </ul></li>
+</ul>
+</div></div></div></div>
+<div class='c1'>
+<hr class='hr1' /><h1 class='heading'><a name='Application.binary.interface..28ABI.29'></a>Application binary interface (<b>ABI</b>)</h1><div class='c1in'><hr class='hr1in' /><div class='c2'>
+<hr class='hr2' /><h2 class='heading'><a name='Calling.convention'></a>Calling convention</h2><div class='c2in'><hr class='hr2in' />
+<p>A calling convention specifies where arguments to a function are placed, and where the function places its return value.
+You shouldn't worry about it, unless you are an <a href='glossary.html#Assembly'>assembly</a> programmer trying to call assembly functions from C code or vice-versa.</p>
+<div class='c3'>
+<hr class='hr3' /><h3 class='heading'><a name='Default.calling.convention..28regparm.29'></a>Default calling convention (<a href='specificities.html#Default.calling.convention..28regparm.29'><code>regparm</code></a>)</h3><div class='c3in'><hr class='hr3in' />
+<p>Unless otherwise specified, GTC uses the most efficient calling convention,<span class='widespace'>&#32;</span><a href='specificities.html#Default.calling.convention..28regparm.29'><code>regparm</code></a>.
+Basically, it consists of placing as many arguments as possible into a small set of <a href='missing.html' class='invalidlink'>registers</a> for maximum efficiency, and when they are all used, place the remaining arguments on the <a href='missing.html' class='invalidlink'>stack</a>, which is less efficient.</p>
+<p>More precisely, here is the specific algorithm for placing arguments:</p>
+<ul><li> for each argument<span class='widespace'>&#32;</span><code>a</code>, from left to right
+</li><ul><li> if all registers {<code>d0</code>,<code>d1</code>,<code>d2</code>,<code>a0</code>,<code>a1</code>} are already used by other arguments
+</li><ul><li> place<span class='widespace'>&#32;</span><code>a</code><span class='widespace'>&#32;</span>on the stack
+</li></ul><li> else
+</li><ul><li> if there is at least one of {<code>d0</code>,<code>d1</code>,<code>d2</code>} unused <b>and</b> one of {<code>a0</code>,<code>a1</code>} unused
+</li><ul><li> if<span class='widespace'>&#32;</span><code>a</code>'s type is a pointer
+</li><ul><li> place<span class='widespace'>&#32;</span><code>a</code><span class='widespace'>&#32;</span>in the next free address register
+</li></ul><li> else
+</li><ul><li> place<span class='widespace'>&#32;</span><code>a</code><span class='widespace'>&#32;</span>in the next free data register
+</li></ul></ul><li> else
+</li><ul><li> if one of {<code>a0</code>,<code>a1</code>} is unused
+</li><ul><li> place<span class='widespace'>&#32;</span><code>a</code><span class='widespace'>&#32;</span>in the next free address register
+</li></ul><li> else
+</li><ul><li> place<span class='widespace'>&#32;</span><code>a</code><span class='widespace'>&#32;</span>in the next free data register
+</li></ul></ul></ul></ul></ul>
+<p>Here is how the placement of an argument is done:</p>
+<ul><li> how to place<span class='widespace'>&#32;</span><code>a</code><span class='widespace'>&#32;</span>in the next free data register:
+</li><ul><li> place<span class='widespace'>&#32;</span><code>a</code><span class='widespace'>&#32;</span>in<span class='widespace'>&#32;</span><code>d0</code><span class='widespace'>&#32;</span>if it is unused
+</li><li> or if it is used
+</li><ul><li> place<span class='widespace'>&#32;</span><code>a</code><span class='widespace'>&#32;</span>in<span class='widespace'>&#32;</span><code>d1</code><span class='widespace'>&#32;</span>if it is unused
+</li><li> or if it is used place<span class='widespace'>&#32;</span><code>a</code><span class='widespace'>&#32;</span>in<span class='widespace'>&#32;</span><code>d2</code><span class='widespace'>&#32;</span></li></ul></ul><li> how to place<span class='widespace'>&#32;</span><code>a</code><span class='widespace'>&#32;</span>in the next free address register:
+</li><ul><li> place<span class='widespace'>&#32;</span><code>a</code><span class='widespace'>&#32;</span>in<span class='widespace'>&#32;</span><code>a0</code><span class='widespace'>&#32;</span>if it is unused
+</li><li> or if it is used place<span class='widespace'>&#32;</span><code>a</code><span class='widespace'>&#32;</span>in<span class='widespace'>&#32;</span><code>a1</code><span class='widespace'>&#32;</span></li></ul><li> how to place<span class='widespace'>&#32;</span><code>a</code><span class='widespace'>&#32;</span>on the stack:
+</li><ul><li> see<span class='widespace'>&#32;</span><a href='specificities.html#AMS.calling.convention..28stkparm.29'><code>stkparm</code></a><span class='widespace'>&#32;</span></li></ul></ul>
+<p>Here is the algorithm for placing the return value:</p>
+<ul><li> if the return value's type is a pointer
+</li><ul><li> the function should return the value in<span class='widespace'>&#32;</span><code>a0</code><span class='widespace'>&#32;</span></li></ul><li> if the return value's type is an integer
+</li><ul><li> the function should return the value in<span class='widespace'>&#32;</span><code>d0</code><span class='widespace'>&#32;</span></li></ul><li> if the return value's type is a<span class='widespace'>&#32;</span><code>struct</code><span class='widespace'>&#32;</span>or a<span class='widespace'>&#32;</span><code>union</code><span class='widespace'>&#32;</span></li><ul><li> if the structure is 4 bytes long or shorter
+</li><ul><li> the function should return the <em>contents</em> of the structure in<span class='widespace'>&#32;</span><code>d0</code><span class='widespace'>&#32;</span>(not the address!)
+</li></ul><li> else
+</li><ul><li> the ABI is not specified in this case, you should avoid it
+</li></ul></ul></ul>
+<p>Note that<span class='widespace'>&#32;</span><a href='specificities.html#Default.calling.convention..28regparm.29'><code>regparm</code></a><span class='widespace'>&#32;</span>requires the function to have a fixed number of arguments: otherwise, for <a href='missing.html' class='invalidlink'>variable-argument functions</a>, <b>no</b> arguments are placed in registers, and the<span class='widespace'>&#32;</span><a href='specificities.html#AMS.calling.convention..28stkparm.29'><code>stkparm</code></a><span class='widespace'>&#32;</span>convention is used instead.</p>
+<p>Note that TIGCC uses the same algorithm, as long as you specify the <a href='missing.html' class='invalidlink'>function attribute</a><span class='widespace'>&#32;</span><code>__attribute__((regparm(2,1)))</code>.</p>
+<p>You can also use a different set of variables than<span class='widespace'>&#32;</span><code>d0</code>-<code>d2</code>/<code>a0</code>-<code>a1</code><span class='widespace'>&#32;</span>thanks to the<span class='widespace'>&#32;</span><a href='missing.html' class='invalidlink'><code>regparm</code><span class='widespace'>&#32;</span>function attribute</a>, but it is not recommended.</p>
+</div></div>
+<div class='c3'>
+<hr class='hr3' /><h3 class='heading'><a name='AMS.calling.convention..28stkparm.29'></a>AMS calling convention (<a href='specificities.html#AMS.calling.convention..28stkparm.29'><code>stkparm</code></a>)</h3><div class='c3in'><hr class='hr3in' />
+<p>The<span class='widespace'>&#32;</span><a href='specificities.html#AMS.calling.convention..28stkparm.29'><code>stkparm</code></a><span class='widespace'>&#32;</span>convention is less efficient, but is useful because it is the one used internally by <a href='glossary.html#AMS'>AMS</a>. It is also much simpler to describe.</p>
+<p>The arguments are pushed one after the other onto the stack, starting from the rightmost argument.<span class='widespace'>&#32;</span><code>char</code>s and<span class='widespace'>&#32;</span><code>unsigned char</code>s should be widened to an<span class='widespace'>&#32;</span><code>int</code><span class='widespace'>&#32;</span>before being pushed.
+</div></div>
+</div></div>
+</div></div></p></div>
+</body>
+</html>

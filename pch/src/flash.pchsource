@@ -1,0 +1,24 @@
+#var __EM_findEmptySlot D(_rom_call(void*,(long,short),15F))
+
+
+#var NULL D(((void*)0))
+#var FALSE D(0)
+#var TRUE D(1)
+
+#var HANDLE typedef unsigned short HANDLE;
+#var HARDWARE_PARM_BLOCK typedef struct{unsigned short len;unsigned long hardwareID;unsigned long hardwareRevision;unsigned long bootMajor;unsigned long bootRevision;unsigned long bootBuild;unsigned long gateArray;unsigned long physDisplayBitsWide;unsigned long physDisplayBitsTall;unsigned long LCDBitsWide;unsigned long LCDBitsTall;}HARDWARE_PARM_BLOCK;
+#var size_t typedef unsigned long size_t;
+#var EM_abandon D(_rom_call(void,(HANDLE),15B))
+#var EM_blockVerifyErase D(_rom_call(short,(void*),15D))
+#var EM_findEmptySlot(s) D((__EM_findEmptySlot((s),0)))
+#var EM_GC D(_rom_call(short,(short),160))
+#var EM_survey D(_rom_call(void,(__pulong,__pulong,__pulong,__pulong,__pulong,__pulong),165))
+#var EM_write D(_rom_call(void,(const void*,void*,long),167))
+#var FL_addCert D(_rom_call(unsigned short,(void*,long),169))
+#var FL_download D(_rom_call(void,(long),16A))
+#var FL_getCert D(_rom_call(void,(HANDLE*,__pulong,short),16C))
+#var FL_getHardwareParmBlock() D((TIOS_entries<0x3CC?(const void*)"\0\x6\0\0\0\x1":_rom_call(const void*,(void),16B)()))
+#var FL_getVerNum D(_rom_call(unsigned short,(void),16D))
+#var FL_write D(_rom_call(void,(const void*,void*,long),171))
+#var GetAMSSize unsigned long GetAMSSize(void);
+

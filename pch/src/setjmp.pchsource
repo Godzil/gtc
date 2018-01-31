@@ -1,0 +1,5 @@
+
+#var JMP_BUF typedef struct{unsigned long D2,D3,D4,D5,D6,D7;unsigned long A2,A3,A4,A5,A6,A7;unsigned long PC;}JMP_BUF[1];
+#var longjmp D(_rom_call(void,(void*,short),267))
+#var setjmp D(_rom_call(short,(void*),266))
+#var jmp_buf D(JMP_BUF)

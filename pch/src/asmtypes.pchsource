@@ -1,0 +1,20 @@
+
+#var BOOL typedef unsigned short BOOL;
+#var BYTE typedef unsigned char BYTE;
+#var DWORD typedef unsigned long DWORD;
+#var SBYTE typedef signed char SBYTE;
+#var SCHAR typedef signed char SCHAR;
+#var SDWORD typedef signed long SDWORD;
+#var SINT typedef signed int SINT;
+#var SLONG typedef signed long SLONG;
+#var SSHORT typedef signed short SSHORT;
+#var SWORD typedef signed short SWORD;
+#var UBYTE typedef unsigned char UBYTE;
+#var UCHAR typedef unsigned char UCHAR;
+#var UDWORD typedef unsigned long UDWORD;
+#var UINT typedef unsigned int UINT;
+#var ULONG typedef unsigned long ULONG;
+#var USHORT typedef unsigned short USHORT;
+#var UWORD typedef unsigned short UWORD;
+#var WORD typedef unsigned short WORD;
+

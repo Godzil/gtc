@@ -1,0 +1,9 @@
+
+#var SPRT_XOR D(0)
+#var SPRT_OR D(1)
+#var SPRT_AND D(2)
+
+#var Sprite8 void Sprite8(short,short,short,unsigned char*,void*,short)__ATTR_LIB_C__;
+#var Sprite16 void Sprite16(short,short,short,__pushort,void*,short)__ATTR_LIB_C__;
+#var Sprite32 void Sprite32(short,short,short,__pulong,void*,short)__ATTR_LIB_C__;
+

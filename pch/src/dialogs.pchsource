@@ -1,0 +1,38 @@
+#var DialogAddScroll(h,x,y,w,g,f,t,p,u,m) D(DialogAdd(h,0,x,y,3,(short)w,(short)g,(short)f,(short)t,(short)p,(short)u,(short)m))
+
+
+#var CENTER D((-1))
+#var H_NULL D(0)
+#var NULL D(((void*)0))
+#var FALSE D(0)
+#var TRUE D(1)
+
+#var BT_NONE D(0)
+#var BT_OK D(1)
+#var BT_SAVE D(2)
+#var BT_YES D(3)
+#var BT_CANCEL D(4)
+#var BT_NO D(5)
+#var BT_GOTO D(6)
+
+#var DialogNew_t typedef CALLBACK short(*DialogNew_t)(short x,long y);
+#var ESQ typedef unsigned char ESQ;
+#var HANDLE typedef unsigned short HANDLE;
+#var HSym typedef struct{HANDLE folder;unsigned short offset;}HSym;
+#var SCR_RECT typedef union{struct{unsigned char x0,y0,x1,y1;}xy;unsigned long l;}SCR_RECT;
+#var SCR_STATE typedef struct{void*ScrAddr;unsigned char XMax,YMax;short CurFont,CurAttr,CurX,CurY;SCR_RECT CurClip;}SCR_STATE;
+#var WINDOW typedef struct WindowStruct{unsigned short Flags;unsigned char CurFont;unsigned char CurAttr;unsigned char Background;short TaskId;short CurX,CurY;short CursorX,CursorY;SCR_RECT Client;SCR_RECT Window;SCR_RECT Clip;SCR_RECT Port;unsigned short DupScr;struct WindowStruct*Next;char*Title;SCR_STATE savedScrState;unsigned char Reserved[16];}WINDOW;
+#var Dialog D(_rom_call(short,(void*,short,short,char*,__pshort),30))
+#var DialogAdd D(_rom_call(HANDLE,(HANDLE,short,short,short,short,...),33))
+#var DialogAddPulldown(h,x,y,t,p,i) D(DialogAdd(h,2,x,y,14,(const char*)(t),(short)(p),(short)(i)))
+#var DialogAddRequest(h,x,y,t,o,m,w) D(DialogAdd(h,0,x,y,2,(const char*)(t),(short)(o),(short)(m),(short)(w)))
+#var DialogAddText(h,x,y,t) D(DialogAdd(h,0,x,y,7,(const char*)(t)))
+#var DialogAddTitle(h,t,l,r) D(DialogAdd(h,0,0,0,8,(const char*)(t),(short)(l),(short)(r)))
+#var DialogDo D(_rom_call(short,(HANDLE,short,short,char*,__pshort),32))
+#var DialogNew D(_rom_call(HANDLE,(short,short,DialogNew_t),34))
+#var DialogNewSimple(w,h) D(DialogNew(w,h,NoCallBack))
+#var DlgMessage D(_rom_call(short,(const char*,const char*,short,short),1B4))
+#var NoCallBack short NoCallBack(short,long)__ATTR_TIOS_CALLBACK__;
+#var VarNew D(_rom_call(HSym,(const ESQ*,...),28E))
+#var VarOpen D(_rom_call(HSym,(const ESQ*,...),28C))
+#var VarSaveAs D(_rom_call(HSym,(const ESQ*,const char*,...),28D))

@@ -1,0 +1,18 @@
+#var CHAR_MAX D(255)
+#var CHAR_MIN D(0)
+
+#var INT_MAX D(0x7FFF)
+#var INT_MIN D(((int)0x8000))
+#var UINT_MAX D(0xFFFFU)
+
+#var CHAR_BIT D(8)
+#var LONG_MAX D(0x7FFFFFFFL)
+#var LONG_MIN D(((long)0x80000000L))
+#var SCHAR_MAX D(127)
+#var SCHAR_MIN D((-128))
+#var SHRT_MAX D(0x7FFF)
+#var SHRT_MIN D(((short)0x8000))
+#var UCHAR_MAX D(255)
+#var ULONG_MAX D(0xFFFFFFFFUL)
+#var USHRT_MAX D(0xFFFFU)
+

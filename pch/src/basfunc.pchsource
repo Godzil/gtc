@@ -1,0 +1,28 @@
+
+#var NULL_INDEX D(((CESI)0))
+#var ESQ typedef unsigned char ESQ;
+#var CESI typedef const ESQ*CESI;
+#var ESI typedef ESQ*ESI;
+#var EStackIndex D(ESI)
+#var Quantum D(ESQ)
+#var SYM_STR typedef CESI SYM_STR;
+#var push_getfold D(_rom_call(void,(void),317))
+#var push_getkey D(_rom_call(void,(void),316))
+#var push_getmode D(_rom_call(void,(CESI),318))
+#var push_gettype D(_rom_call(void,(CESI),319))
+#var push_instring D(_rom_call(void,(CESI,CESI,CESI),31A))
+#var push_part D(_rom_call(void,(),31C))
+#var push_pttest D(_rom_call(void,(CESI,CESI),31D))
+#var push_pxltest D(_rom_call(void,(CESI,CESI),31E))
+#var push_rand D(_rom_call(void,(CESI),31F))
+#var push_randpoly D(_rom_call(void,(CESI,CESI),320))
+#var push_setfold D(_rom_call(void,(CESI),321))
+#var push_setgraph D(_rom_call(void,(CESI,CESI),322))
+#var push_setmode D(_rom_call(void,(CESI,CESI),323))
+#var push_settable D(_rom_call(void,(CESI,CESI),324))
+#var push_str_to_expr D(_rom_call(void,(CESI),325))
+#var push_string D(_rom_call(void,(CESI),326))
+#var push_switch D(_rom_call(void,(CESI),327))
+
+#var push_subst_no_simp D(push_substitute_no_simplify)
+#var push_nSolve D(push_nsolve)

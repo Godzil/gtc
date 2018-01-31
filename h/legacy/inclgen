@@ -1,0 +1,4 @@
+#define USE_KERNEL
+#include <tigcclib.h>
+#define X 160
+#define Y 100

@@ -1,0 +1,36 @@
+
+#var NULL D(((void*)0))
+#var FALSE D(0)
+#var TRUE D(1)
+
+#var ESQ typedef unsigned char ESQ;
+#var CESI typedef const ESQ*CESI;
+#var ESI typedef ESQ*ESI;
+#var LIO_CTX typedef struct{unsigned short hVar;union{const void*pVar;struct{unsigned short FindFlags;unsigned short NameSym;}DirVars;}extra;const char*VarName;unsigned short VarSize;unsigned short Index;unsigned short Unknown;unsigned char VarType;unsigned char VarCompat;}LIO_CTX;
+#var size_t typedef unsigned long size_t;
+#var SYM_STR typedef CESI SYM_STR;
+#var flush_link D(_rom_call(void,(void),24D))
+#var getcalc D(_rom_call(void,(SYM_STR),54))
+#var LIO_Get D(_rom_call(unsigned short,(LIO_CTX*),57))
+#var LIO_GetMultiple D(_rom_call(short,(LIO_CTX*),59))
+#var LIO_Receive D(_rom_call(unsigned short,(LIO_CTX*,short,short),58))
+#var LIO_RecvData D(_rom_call(unsigned short,(void*,long,long),5B))
+#var LIO_Send D(_rom_call(unsigned short,(LIO_CTX*,short),56))
+#var LIO_SendData D(_rom_call(unsigned short,(const void*,long),5A))
+#var LIO_SendProduct D(_rom_call(unsigned short,(LIO_CTX*,short),253))
+#var OSCheckSilentLink D(_rom_call(short,(void),24A))
+#var OSLinkClose D(_rom_call(void,(void),24E))
+#var OSLinkCmd D(_rom_call(void,(short),24B))
+#var OSLinkOpen D(_rom_call(void,(void),24D))
+#var OSLinkReset D(_rom_call(void,(void),24C))
+#var OSLinkTxQueueActive D(_rom_call(short,(void),252))
+#var OSLinkTxQueueInquire D(_rom_call(unsigned short,(void),251))
+#var OSReadLinkBlock D(_rom_call(unsigned short,(char*,short),24F))
+#var OSWriteLinkBlock D(_rom_call(short,(const char*,short),250))
+#var receive D(_rom_call(unsigned short,(char*,short),24F))
+#var reset_link D(_rom_call(void,(void),24C))
+#var sendcalc D(_rom_call(unsigned short,(SYM_STR,short,short,unsigned char*),55))
+#var transmit D(_rom_call(short,(const char*,short),250))
+#var tx_free D(_rom_call(unsigned short,(void),252))
+
+

@@ -1,0 +1,40 @@
+#var H_NULL D(0)
+#var NULL D(((void*)0))
+#var FALSE D(0)
+#var TRUE D(1)
+
+#var HANDLE typedef unsigned short HANDLE;
+#var size_t typedef unsigned long size_t;
+#var calloc void *calloc(short,short)__ATTR_LIB_ASM__;
+#var calloc_throw void *calloc_throw(short,short)__ATTR_LIB_ASM__;
+#var free D(_rom_call(void,(void*),A3))
+#var FreeHandles D(_rom_call(short,(void),23B))
+#var HeapAlloc D(_rom_call(HANDLE,(long),90))
+#var HeapAllocESTACK D(_rom_call(HANDLE,(long),91))
+#var HeapAllocHigh D(_rom_call(HANDLE,(long),92))
+#var HeapAllocHighThrow D(_rom_call(HANDLE,(long),94))
+#var HeapAllocPtr D(_rom_call(void*,(long),A2))
+#var HeapAllocPtrThrow void *HeapAllocPtrThrow(long)__ATTR_TIOS__;
+#var HeapAllocThrow D(_rom_call(HANDLE,(long),93))
+#var HeapAvail D(_rom_call(unsigned long,(void),8F))
+#var HeapCompress D(_rom_call(void,(void),95))
+#var HeapDeref D(_rom_call(void*,(HANDLE),96))
+#var HeapEnd D(_rom_call(void*,(void),A1))
+#var HeapFree D(_rom_call(void,(HANDLE),97))
+#var HeapFreeIndir D(_rom_call(void,(void*),98))
+#var HeapFreePtr D(_rom_call(void,(void*),A3))
+#var HeapGetHandle D(_rom_call(HANDLE,(void),239))
+#var HeapGetLock D(_rom_call(short,(HANDLE),9B))
+#var HeapLock D(_rom_call(HANDLE,(HANDLE),9A))
+#var HeapMax D(_rom_call(unsigned long,(void),9C))
+#var HeapMoveHigh D(_rom_call(HANDLE,(HANDLE),A0))
+#var HeapPtrToHandle D(_rom_call(HANDLE,(void*),23A))
+#var HeapRealloc D(_rom_call(HANDLE,(HANDLE,long),9D))
+#var HeapReallocThrow HANDLE HeapReallocThrow(HANDLE,long)__ATTR_TIOS__;
+#var HeapSize D(_rom_call(unsigned short,(HANDLE),9E))
+#var HeapUnlock D(_rom_call(HANDLE,(HANDLE),9F))
+#var HLock D(_rom_call(void*,(HANDLE),99))
+#var malloc D(_rom_call(void*,(long),A2))
+#var malloc_throw void *malloc_throw(long)__ATTR_TIOS__;
+#var realloc void *realloc(void*,long)__ATTR_LIB_ASM__;
+#var realloc_throw void *realloc_throw(void*,long)__ATTR_LIB_ASM__;

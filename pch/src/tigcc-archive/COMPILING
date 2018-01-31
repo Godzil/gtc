@@ -1,0 +1,13 @@
+You can recompile this on a TIGCC system by patching the system <default.h>
+include file and replacing the line:
+    #define __ATTR_LIB_C__ __attribute__((__regparm__(4)))
+with the lines
+    #ifdef REGPARM1_STDLIB
+    #define __ATTR_LIB_C__ __attribute__((__regparm__(1)))
+    #define CONFIRM_REGPARM1_ENABLED
+    #else
+    #define __ATTR_LIB_C__ __attribute__((__regparm__(4)))
+    #endif
+
+This has been tested with TIGCC 0.94SP4. Newer versions will likely require
+adaptation of this source code and/or toolchain.

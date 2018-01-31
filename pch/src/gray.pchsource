@@ -1,0 +1,87 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#var __L_plane extern void* __L_plane; 
+#var __D_plane extern void*  __D_plane; 
+#var __L_plane2 extern void*  __L_plane2;  
+#var __D_plane2 extern void*  __D_plane2;  
+
+#var __gray_hw_type extern short  __gray_hw_type;
+#var __gray_dbl_offset extern unsigned short __gray_dbl_offset; 
+#var __switch_cnt extern volatile unsigned long __switch_cnt;
+#var __gray_old_int1_hw1 extern volatile void *__gray_old_int1_hw1; 
+#var __gray_old_int1_hw2 extern volatile void *__gray_old_int1_hw2; 
+#var __gray_version extern const char  __gray_version[]; 
+
+
+
+
+
+
+#var GRAYDBUFFER_SIZE D(7688)
+#var FALSE D(0)
+#var TRUE D(1)
+
+#var GRAY_OFF D(0)
+#var GRAY_ON D(1)
+#var GRAY_HW1 D(1)
+#var GRAY_HW2 D(1)
+
+#var LIGHT_PLANE D(0)
+#var DARK_PLANE D(1)
+
+#var _DEREF_INT_HANDLER typedef struct{short foo;}_DEREF_INT_HANDLER;
+#var INT_HANDLER typedef _DEREF_INT_HANDLER *INT_HANDLER;
+#var GrayAdjust(x) D(((void)(*(volatile unsigned char*)0x600013=128-(signed char)(x))))
+#var GrayCheckRunning() D((!!__gray_handle))
+#var __gray_handle extern unsigned short __gray_handle;
+#var IsGrayMode D(GrayCheckRunning)
+#var GrayDBufCleanup() D(((void)(__gray_dbl_offset=0,__D_plane2=__D_plane,__L_plane2=__L_plane)))
+#var GrayDBufGetActiveIdx() D((!!__gray_dbl_offset))
+#var GrayDBufGetActivePlane(x) D((GrayDBufGetPlane(GrayDBufGetActiveIdx(),x)))
+#var GrayDBufGetHiddenIdx() D((!__gray_dbl_offset))
+#var GrayDBufGetHiddenPlane(x) D((GrayDBufGetPlane(GrayDBufGetHiddenIdx(),x)))
+#var GrayDBufGetPlane(i,x) D(((i)?((x)?__D_plane2:__L_plane2):GrayGetPlane(x)))
+#var GrayDBufInit(p) D(({void*aptr=(void*)((((long)p)+7)&0xfffffff8L);__gray_dbl_offset=0;__D_plane2=aptr;(void)(__L_plane2=aptr+3840);}))
+#var GrayDBufSetActiveAMSPlane(x) D(GrayDBufSetAMSPlane(GrayDBufGetActiveIdx(),x))
+#var GrayDBufSetActiveIdx(i) D(((void)(__gray_dbl_offset=((i)?8:0))))
+#var GrayDBufSetActiveIdxSync(i) D(((void)(GrayWaitNSwitches(1),GrayDBufSetActiveIdx(i))))
+#var GrayDBufSetAMSPlane(i,x) D((_rom_call(void,(void*,long),1A2)(GrayDBufGetPlane(i,x),0xEF007F)))
+#var GrayDBufSetHiddenAMSPlane(x) D(GrayDBufSetAMSPlane(GrayDBufGetHiddenIdx(),x))
+#var GrayDBufToggle() D(((void)(__gray_dbl_offset=(__gray_dbl_offset?0:8))))
+#var GrayDBufToggleSync() D((GrayWaitNSwitches(1),GrayDBufToggle()))
+#var GrayGetInt1Handler() D(((INT_HANDLER)(__gray_hw_type?__gray_old_int1_hw2:__gray_old_int1_hw1)))
+#var GetGrayInt1Handler D(GrayGetInt1Handler)
+#var GrayGetPlane(x) D(((x)?__D_plane:__L_plane))
+#var GetPlane D(GrayGetPlane)
+#var GrayGetSwitchCount() D((__switch_cnt))
+#var GetGraySwitchCount D(GrayGetSwitchCount)
+#var GrayGetVersionString() D(((const char*)__gray_version))
+#var GrayMode(x) D(((x)?GrayOn():(GrayOff(),(short)1)))
+#var GrayOff void GrayOff(void)__ATTR_LIB_ASM__;
+#var GrayOn short GrayOn(void)__ATTR_LIB_ASM__;
+#var GraySetAMSPlane(x) D((_rom_call(void,(void*,long),1A2)(GrayGetPlane(x),0xEF007F)))
+#var SetPlane D(GraySetAMSPlane)
+#var GraySetInt1Handler(p) D(((void)(__gray_hw_type?((INT_HANDLER)__gray_old_int1_hw2=(p)):((INT_HANDLER)__gray_old_int1_hw1=(p)))))
+#var SetGrayInt1Handler D(GraySetInt1Handler)
+#var GraySetSwitchCount(val) D((__switch_cnt=(val)))
+#var SetGraySwitchCount D(GraySetSwitchCount)
+#var GrayWaitNSwitches(n) D(({unsigned long __w=__switch_cnt+(n);while(__switch_cnt<__w);}))
+
+
+#var _GrayIsRealHW2() D((__gray_hw_type))

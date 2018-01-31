@@ -1,0 +1,17 @@
+
+#var GR_FUNC D(1)
+#var GR_PAR D(2)
+#var GR_POL D(3)
+#var GR_SEQ D(4)
+#var GR_3D D(5)
+#var GR_DE D(6)
+
+#var GD_Circle D(_rom_call(void,(void),176))
+#var GD_Contour D(_rom_call(void,(void),17D))
+#var GD_Eraser D(_rom_call(void,(void),17A))
+#var GD_HVLine D(_rom_call(void,(short),178))
+#var GD_Line D(_rom_call(void,(void),177))
+#var GD_Pen D(_rom_call(void,(void),179))
+#var GD_Select D(_rom_call(void,(void),17C))
+#var GD_Text D(_rom_call(void,(void),17B))
+

@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+<head>
+	<title>On-calc usage - GTC documentation</title>
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+	<link rel='stylesheet' type='text/css' href='layout/default.css' />
+</head>
+<body>
+<p><a href='index.html'>◄ Back to index</a></p>
+<div class='c0'>
+<h1>On-calc usage</h1>
+<div class='toc'><div class='toctop'><div class='tocbot'><div class='toc-content'>
+<b>Contents:</b><ul>
+  <li><a href='#On-calc.IDE'>On-calc IDE</a>
+  <ul>
+    <li><a href='#Installation'>Installation</a></li>
+    <li><a href='#Key.commands'>Key commands</a></li>
+    <li><a href='#Tips.and.tricks'>Tips and tricks</a></li>
+  </ul></li>
+</ul>
+</div></div></div></div>
+<div class='c1'>
+<hr class='hr1' /><h1 class='heading'><a name='On-calc.IDE'></a>On-calc IDE</h1><div class='c1in'><hr class='hr1in' /><div class='c2'>
+<hr class='hr2' /><h2 class='heading'><a name='Installation'></a>Installation</h2><div class='c2in'><hr class='hr2in' />
+<p>You must first install FlashAppy on your calculator. Note that like all ROM 
+patches, you will not be able to send your modified calculator ROM image to 
+other calculators. Neither the authors of GTC nor the author of FlashAppy can 
+be held responsible for any damage that could occur during or after this 
+process. However, we are not aware of any case where a calculator was damaged 
+by FlashAppy.</p>
+<p>You only need to install FlashAppy once: you won't need to reinstall it after a 
+reset or after upgrading to a newer version of GTC. On the other hand if you 
+install an <a href='glossary.html#AMS'>AMS</a> update you will need to reinstall FlashAppy afterwards.</p>
+<p><em>Legal notice: the<span class='widespace'>&#32;</span><code>.89t/.9xt/.v2t</code><span class='widespace'>&#32;</span>and<span class='widespace'>&#32;</span><code>.89y/.9xy/.v2y</code><span class='widespace'>&#32;</span>files in the<span class='widespace'>&#32;</span><code>bin-89/92p/v200</code><span class='widespace'>&#32;</span>directories are subject to the <a href='license-gpl2.html#GNU.General.Public.License'>GNU General Public License</a>, which grants you a number of rights. You may choose not to install them, but this will prevent you from using the TIGCC Library.</em></p>
+<p>Once FlashAppy is installed, send all the files in the<span class='widespace'>&#32;</span><code>bin-89</code>,<span class='widespace'>&#32;</span><code>bin-92p</code><span class='widespace'>&#32;</span>or<span class='widespace'>&#32;</span><code>bin-v200</code><span class='widespace'>&#32;</span>directory (depending on the model) to your calculator, and archive 
+them all.</p>
+<p>Check that the GTC flashapp was properly transferred by entering the Var-Link 
+screen and pressing F7: you should see GTC appear in the list. Otherwise, the 
+transfer failed: make sure that FlashAppy is installed and that you have enough 
+Archive memory.</p>
+<p>To create a test source file, create a directory named<span class='widespace'>&#32;</span><code>source</code>, create an 
+empty text file inside that directory named<span class='widespace'>&#32;</span><code>hello</code><span class='widespace'>&#32;</span>with the TI text editor, 
+and archive it with the Var-Link screen.</p>
+<p>Now you can run the IDE by typing<span class='widespace'>&#32;</span><code>gtc\gtc_ide()</code><span class='widespace'>&#32;</span>and open the file named<span class='widespace'>&#32;</span><code>hello</code>.</p>
+<p>Type in the following code:</p>
+<pre>
+#include &lt;tigcclib.h&gt;
+
+void _main() {
+  ST_helpMsg("Hello world!");
+}
+</pre>
+<p>Now press the F5 key. This should bring up a compilation dialog, which should 
+close after a few seconds (if not, you may not have installed GTC properly: 
+make sure FlashAppy is correctly installed, that everything is archived, and 
+that you have enough RAM).</p>
+<p>Once the compilation is over you can exit the IDE and run your program by 
+typing</p>
+<pre>
+outbin()
+</pre>
+<p>It should display the text<span class='widespace'>&#32;</span><code>Hello world!</code><span class='widespace'>&#32;</span>in the status line. If it worked, 
+congratulations! You now have a working C compiler on your calculator.</p>
+</div></div>
+<div class='c2'>
+<hr class='hr2' /><h2 class='heading'><a name='Key.commands'></a>Key commands</h2><div class='c2in'><hr class='hr2in' />
+<p>Here is a small subset of the key commands supported by GTC IDE:</p>
+<ul><li> <b>CLEAR</b>: indent the cursor by two columns (equivalent to the TAB key on a 
+ PC)
+</li><li> <b>Catalog</b>: lists all functions available in the standard library
+</li><li> <b>F5</b>: compile the current file
+</li><li> <b>2nd-F3</b>: search for a string in the current file
+</li><li> <b>Diamond-F3</b>: replace a string in the current file
+</li><li> <b>F3</b>: search for the next occurrence of the string
+</li></ul>
+<p>Also, GTC IDE supports keyboard shortcuts that the standard text editor 
+doesn't: for example, you can press <b>Shift-2nd-Right</b> (press Shift and 2nd, 
+then press Right while still holding Shift and 2nd) to highlight the text from 
+the cursor to the end of the line. Likewise you can press <b>Shift-2nd-Down</b> to 
+highlight a whole screen of text, or <b>Shift-Diamond-Down</b> to select until the 
+end of the file. These shortcuts come in particularly handy when selecting 
+large amounts of text.</p>
+</div></div>
+<div class='c2'>
+<hr class='hr2' /><h2 class='heading'><a name='Tips.and.tricks'></a>Tips and tricks</h2><div class='c2in'><hr class='hr2in' /><ul><li> You should map<span class='widespace'>&#32;</span><code>main\outbin()</code><span class='widespace'>&#32;</span>to a<span class='widespace'>&#32;</span><code>kbdprgm</code><span class='widespace'>&#32;</span>like<span class='widespace'>&#32;</span><code>kbdprgm9</code><span class='widespace'>&#32;</span>so that you can 
+ quickly run a freshly compiled program by typing <b>Diamond-9</b> in the Home 
+ screen.
+</li><li> You can save memory by deleting header files you don't use in the folder<span class='widespace'>&#32;</span><code>zheader</code>. You should not delete<span class='widespace'>&#32;</span><code>stdhead</code><span class='widespace'>&#32;</span>or<span class='widespace'>&#32;</span><code>keywords</code><span class='widespace'>&#32;</span>if you want to
+ compile programs designed for the TIGCC library.
+</li></ul></div></div>
+</div></div></div>
+</body>
+</html>

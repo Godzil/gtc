@@ -1,0 +1,17 @@
+
+#var ESQ typedef unsigned char ESQ;
+#var CESI typedef const ESQ*CESI;
+#var ESI typedef ESQ*ESI;
+#var EStackIndex D(ESI)
+#var Quantum D(ESQ)
+#var SYM_STR typedef CESI SYM_STR;
+#var did_push_to_polar D(_rom_call(short,(),313))
+#var push_degrees D(_rom_call(void,(CESI,CESI,CESI),314))
+#var push_indir_name D(_rom_call(void,(CESI),2B2))
+#var push_list_plus D(_rom_call(void,(CESI,CESI),3BD))
+#var push_list_times D(_rom_call(void,(CESI,CESI),3BE))
+#var push_matrix_product D(_rom_call(void,(CESI,CESI),3C5))
+#var push_pow D(_rom_call(void,(CESI,CESI),30F))
+#var push_to_cylin D(_rom_call(void,(),328))
+#var push_to_sphere D(_rom_call(void,(),329))
+

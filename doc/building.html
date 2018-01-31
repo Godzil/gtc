@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+<head>
+	<title>Building GTC - GTC documentation</title>
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+	<link rel='stylesheet' type='text/css' href='layout/default.css' />
+</head>
+<body>
+<p><a href='index.html'>◄ Back to index</a></p>
+<div class='c0'>
+<h1>Building GTC</h1>
+<p>If you use Windows or TI calculators you don't need to build GTC yourself as 
+there are already precompiled versions available.</p>
+<p>If you use Unix-like operating systems (Linux, Mac OS X...) you will have to 
+follow these instructions to build GTC yourself.</p>
+<div class='toc'><div class='toctop'><div class='tocbot'><div class='toc-content'>
+<b>Contents:</b><ul>
+  <li><a href='#Building.the.binaries'>Building the binaries</a></li>
+  <li><a href='#Rebuilding.a.modified.GTC'>Rebuilding a modified GTC</a></li>
+  <li><a href='#Notes.for.developers'>Notes for developers</a></li>
+</ul>
+</div></div></div></div>
+<div class='c1'>
+<hr class='hr1' /><h1 class='heading'><a name='Building.the.binaries'></a>Building the binaries</h1><div class='c1in'><hr class='hr1in' />
+<p>You should need no special package apart from GNU make and a C/C++ compiler to 
+build GTC. On Windows you will need Cygwin.</p>
+<p>Just type</p>
+<p><code>./configure &amp;&amp; make &amp;&amp; sudo make install</code></p>
+<p>(replace<span class='widespace'>&#32;</span><code>make</code><span class='widespace'>&#32;</span>with<span class='widespace'>&#32;</span><code>make -j</code><span class='widespace'>&#32;</span>to take advantage of multiprocessor systems).</p>
+<p>By default GTC will be installed in<span class='widespace'>&#32;</span><code>/usr/local</code>. If you want to install it in 
+a different directory (for example if you don't have administrator rights), use 
+the following command:</p>
+<p><code>./configure --prefix $HOME/my_directory &amp;&amp; make install</code></p>
+</div></div>
+<div class='c1'>
+<hr class='hr1' /><h1 class='heading'><a name='Rebuilding.a.modified.GTC'></a>Rebuilding a modified GTC</h1><div class='c1in'><hr class='hr1in' />
+<p>The above instructions are designed to only recompile platform-dependent files 
+and as such have minimal dependencies.</p>
+<p>If you want to modify precompiled data such as the precompiled headers you will 
+need extra packages like Perl and possibly Ruby.</p>
+</div></div>
+<div class='c1'>
+<hr class='hr1' /><h1 class='heading'><a name='Notes.for.developers'></a>Notes for developers</h1><div class='c1in'><hr class='hr1in' />
+<p>The Makefiles follow these conventions:</p>
+<ul><li><span class='widespace'>&#32;</span><code>make clean</code><span class='widespace'>&#32;</span>cleans up intermediary files, but not final files.
+</li><li><span class='widespace'>&#32;</span><code>make distclean</code><span class='widespace'>&#32;</span>cleans up intermediary files and any platform-dependent
+ files.
+</li><li><span class='widespace'>&#32;</span><code>make scratchclean</code><span class='widespace'>&#32;</span>cleans up everything that can be rebuilt. Note: use
+ with care, as if you don't have the right tools installed you are not going 
+ to be able to rebuild GTC.
+</li></ul>
+<p>All Makefiles are designed to be safely used with parallel compilation.
+</div></div></p></div>
+</body>
+</html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+<head>
+	<title>GTC Extensions - GTC documentation</title>
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+	<link rel='stylesheet' type='text/css' href='layout/default.css' />
+</head>
+<body>
+<p><a href='index.html'>◄ Back to index</a></p>
+<div class='c0'>
+<h1>GTC Extensions</h1>
+<p>GTC supports a number of extensions, designed to take advantage of the TI platform, or simply to maintain compatibility with existing programs.</p>
+<div class='toc'><div class='toctop'><div class='tocbot'><div class='toc-content'>
+<b>Contents:</b><ul>
+  <li><a href='#GNU.extensions'>GNU extensions</a>
+  <ul>
+    <li><a href='#Statements.and.Declarations.in.Expressions'>Statements and Declarations in Expressions</a></li>
+    <li><a href='#Referring.to.a.Type.with.typeof'>Referring to a Type with typeof</a></li>
+    <li><a href='#Generalized.Lvalues'>Generalized Lvalues</a></li>
+    <li><a href='#Conditionals.with.Omitted.Operands'>Conditionals with Omitted Operands</a></li>
+    <li><a href='#Binary.Numbers'>Binary Numbers</a></li>
+    <li><a href='#Structures.With.No.Members'>Structures With No Members</a></li>
+    <li><a href='#Arrays.of.Length.Zero'>Arrays of Length Zero</a></li>
+    <li><a href='#Macros.with.a.Variable.Number.of.Arguments'>Macros with a Variable Number of Arguments</a></li>
+    <li><a href='#Arithmetic.on.void.and.Function.Pointers'>Arithmetic on void and Function Pointers</a></li>
+    <li><a href='#Non-Constant.Initializers'>Non-Constant Initializers</a></li>
+    <li><a href='#Compound.Literals..28Cast.Constructors.29'>Compound Literals (Cast Constructors)</a></li>
+    <li><a href='#Designated.Initializers'>Designated Initializers</a></li>
+    <li><a href='#Case.Ranges'>Case Ranges</a></li>
+    <li><a href='#Specifying.Attributes.of.Functions'>Specifying Attributes of Functions</a></li>
+    <li><a href='#C.2b.2b.Style.Comments'>C++ Style Comments</a></li>
+    <li><a href='#Dollar.Signs.in.Identifier.Names'>Dollar Signs in Identifier Names</a></li>
+    <li><a href='#Escape.Character.in.Constants'>Escape Character in Constants</a></li>
+    <li><a href='#Alternate.Keywords'>Alternate Keywords</a></li>
+    <li><a href='#__builtin_constant_p'>__builtin_constant_p</a></li>
+    <li><a href='#Mixed.Declarations.and.Code'>Mixed Declarations and Code</a></li>
+    <li><a href='#Unnamed.struct.2funion.Fields.within.structs.2funions'>Unnamed struct/union Fields within structs/unions</a></li>
+  </ul></li>
+  <li><a href='#GTC-specific.extensions'>GTC-specific extensions</a>
+  <ul>
+    <li><a href='#incbin.directive'>incbin directive</a>
+    <ul>
+      <li><a href='#Using.incbin.to.declare.a.C.array'>Using incbin to declare a C array</a></li>
+      <li><a href='#Using.incbin.within.an.asm.7b.7d.statement'>Using incbin within an asm{} statement</a></li>
+    </ul></li>
+    <li><a href='#asm.7b.7d.statement'>asm{} statement</a>
+    <ul>
+      <li><a href='#Inserting.an.asm.7b.7d.statement.in.the.code'>Inserting an asm{} statement in the code</a>
+      <ul>
+        <li><a href='#Global.asm.7b.7d.statements'>Global asm{} statements</a></li>
+        <li><a href='#Inline.asm.7b.7d.statements'>Inline asm{} statements</a></li>
+      </ul></li>
+      <li><a href='#Structure.of.an.asm.7b.7d.statement'>Structure of an asm{} statement</a></li>
+      <li><a href='#asm.7b.7d.interpretation.rules'>asm{} interpretation rules</a></li>
+      <li><a href='#Extra.features.of.asm.7b.7d.statements'>Extra features of asm{} statements</a></li>
+      <li><a href='#asm.7b.7d.special.operator.3a.__c__'>asm{} special operator: __c__</a></li>
+    </ul></li>
+    <li><a href='#.40.40.prefix'>@@ prefix</a></li>
+  </ul></li>
+</ul>
+</div></div></div></div>
+<div class='c1'>
+<hr class='hr1' /><h1 class='heading'><a name='GNU.extensions'></a>GNU extensions</h1><div class='c1in'><hr class='hr1in' /><div class='c2'>
+<hr class='hr2' /><h2 class='heading'><a name='Statements.and.Declarations.in.Expressions'></a>Statements and Declarations in Expressions</h2><div class='c2in'><hr class='hr2in' />
+<p>See <a href='http://tigcc.ticalc.org/doc/gnuexts.html#SEC63'> Statements and Declarations in Expressions</a>.</p>
+</div></div>
+<div class='c2'>
+<hr class='hr2' /><h2 class='heading'><a name='Referring.to.a.Type.with.typeof'></a>Referring to a Type with <em>typeof</em></h2><div class='c2in'><hr class='hr2in' />
+<p>See <a href='http://tigcc.ticalc.org/doc/gnuexts.html#SEC69'> Referring to a Type with <em>typeof</em></a></p>
+</div></div>
+<div class='c2'>
+<hr class='hr2' /><h2 class='heading'><a name='Generalized.Lvalues'></a>Generalized Lvalues</h2><div class='c2in'><hr class='hr2in' />
+<p>See <a href='http://tigcc.ticalc.org/doc/gnuexts.html#SEC70'> Generalized Lvalues</a>.</p>
+<p>Note however that weird constructs like<span class='widespace'>&#32;</span><code>(a,b)+=5</code><span class='widespace'>&#32;</span>are rejected by GTC -- commas are not considered legal lvalues.</p>
+</div></div>
+<div class='c2'>
+<hr class='hr2' /><h2 class='heading'><a name='Conditionals.with.Omitted.Operands'></a>Conditionals with Omitted Operands</h2><div class='c2in'><hr class='hr2in' />
+<p>See <a href='http://tigcc.ticalc.org/doc/gnuexts.html#SEC71'> Conditionals with Omitted Operands</a>.</p>
+</div></div>
+<div class='c2'>
+<hr class='hr2' /><h2 class='heading'><a name='Binary.Numbers'></a>Binary Numbers</h2><div class='c2in'><hr class='hr2in' />
+<p>See <a href='http://tigcc.ticalc.org/doc/gnuexts.html#SEC110'> Binary Numbers</a>.</p>
+</div></div>
+<div class='c2'>
+<hr class='hr2' /><h2 class='heading'><a name='Structures.With.No.Members'></a>Structures With No Members</h2><div class='c2in'><hr class='hr2in' />
+<p>See <a href='http://tigcc.ticalc.org/doc/gnuexts.html#SEC111'> Structures With No Members</a>.</p>
+</div></div>
+<div class='c2'>
+<hr class='hr2' /><h2 class='heading'><a name='Arrays.of.Length.Zero'></a>Arrays of Length Zero</h2><div class='c2in'><hr class='hr2in' />
+<p>See <a href='http://tigcc.ticalc.org/doc/gnuexts.html#SEC75'> Arrays of Length Zero</a>.</p>
+</div></div>
+<div class='c2'>
+<hr class='hr2' /><h2 class='heading'><a name='Macros.with.a.Variable.Number.of.Arguments'></a>Macros with a Variable Number of Arguments</h2><div class='c2in'><hr class='hr2in' />
+<p>See <a href='http://tigcc.ticalc.org/doc/gnuexts.html#SEC77'> Macros with a Variable Number of Arguments</a>.</p>
+</div></div>
+<div class='c2'>
+<hr class='hr2' /><h2 class='heading'><a name='Arithmetic.on.void.and.Function.Pointers'></a>Arithmetic on void and Function Pointers</h2><div class='c2in'><hr class='hr2in' />
+<p>See <a href='http://tigcc.ticalc.org/doc/gnuexts.html#SEC79'> Arithmetic on void and Function Pointers</a>.</p>
+</div></div>
+<div class='c2'>
+<hr class='hr2' /><h2 class='heading'><a name='Non-Constant.Initializers'></a>Non-Constant Initializers</h2><div class='c2in'><hr class='hr2in' />
+<p>See <a href='http://tigcc.ticalc.org/doc/gnuexts.html#SEC80'> Non-Constant Initializers</a>.</p>
+</div></div>
+<div class='c2'>
+<hr class='hr2' /><h2 class='heading'><a name='Compound.Literals..28Cast.Constructors.29'></a>Compound Literals (Cast Constructors)</h2><div class='c2in'><hr class='hr2in' />
+<p>See <a href='http://tigcc.ticalc.org/doc/gnuexts.html#SEC81'> Compound Literals (Cast Constructors)</a>. There is some difference in the handling of static storage duration though, see <a href='faq.html#Differences.between.GTC.and.TIGCC'>Differences between GTC and TIGCC</a>.</p>
+</div></div>
+<div class='c2'>
+<hr class='hr2' /><h2 class='heading'><a name='Designated.Initializers'></a>Designated Initializers</h2><div class='c2in'><hr class='hr2in' />
+<p>See <a href='http://tigcc.ticalc.org/doc/gnuexts.html#SEC82'> Designated Initializers</a>, but in GTC this only works for array types.</p>
+</div></div>
+<div class='c2'>
+<hr class='hr2' /><h2 class='heading'><a name='Case.Ranges'></a>Case Ranges</h2><div class='c2in'><hr class='hr2in' />
+<p>See <a href='http://tigcc.ticalc.org/doc/gnuexts.html#SEC83'> Case Ranges</a>.</p>
+</div></div>
+<div class='c2'>
+<hr class='hr2' /><h2 class='heading'><a name='Specifying.Attributes.of.Functions'></a>Specifying Attributes of Functions</h2><div class='c2in'><hr class='hr2in' />
+<p>See <a href='http://tigcc.ticalc.org/doc/gnuexts.html#SEC85'> Specifying Attributes of Functions</a>, however not all of the specifiers are meaningful in GTC.</p>
+</div></div>
+<div class='c2'>
+<hr class='hr2' /><h2 class='heading'><a name='C.2b.2b.Style.Comments'></a>C++ Style Comments</h2><div class='c2in'><hr class='hr2in' />
+<p>See <a href='http://tigcc.ticalc.org/doc/gnuexts.html#SEC87'> C++ Style Comments</a>.</p>
+</div></div>
+<div class='c2'>
+<hr class='hr2' /><h2 class='heading'><a name='Dollar.Signs.in.Identifier.Names'></a>Dollar Signs in Identifier Names</h2><div class='c2in'><hr class='hr2in' />
+<p>See <a href='http://tigcc.ticalc.org/doc/gnuexts.html#SEC88'> Dollar Signs in Identifier Names</a>.</p>
+</div></div>
+<div class='c2'>
+<hr class='hr2' /><h2 class='heading'><a name='Escape.Character.in.Constants'></a>Escape Character in Constants</h2><div class='c2in'><hr class='hr2in' />
+<p>See <a href='http://tigcc.ticalc.org/doc/gnuexts.html#SEC89'> Escape Character in Constants</a>.</p>
+</div></div>
+<div class='c2'>
+<hr class='hr2' /><h2 class='heading'><a name='Alternate.Keywords'></a>Alternate Keywords</h2><div class='c2in'><hr class='hr2in' />
+<p>See <a href='http://tigcc.ticalc.org/doc/gnuexts.html#SEC100'> Alternate Keywords</a>.</p>
+</div></div>
+<div class='c2'>
+<hr class='hr2' /><h2 class='heading'><a name='__builtin_constant_p'></a><a href='extensions.html#__builtin_constant_p'><code>__builtin_constant_p</code></a></h2><div class='c2in'><hr class='hr2in' />
+<p>See <a href='http://tigcc.ticalc.org/doc/gnuexts.html#SEC104___builtin_constant_p'> __builtin_constant_p</a>.</p>
+</div></div>
+<div class='c2'>
+<hr class='hr2' /><h2 class='heading'><a name='Mixed.Declarations.and.Code'></a>Mixed Declarations and Code</h2><div class='c2in'><hr class='hr2in' />
+<p>See <a href='http://tigcc.ticalc.org/doc/gnuexts.html#SEC107'> Mixed Declarations and Code</a>.</p>
+</div></div>
+<div class='c2'>
+<hr class='hr2' /><h2 class='heading'><a name='Unnamed.struct.2funion.Fields.within.structs.2funions'></a>Unnamed struct/union Fields within structs/unions</h2><div class='c2in'><hr class='hr2in' />
+<p>See <a href='http://tigcc.ticalc.org/doc/gnuexts.html#SEC108'> Unnamed struct/union Fields within structs/unions</a>.</p>
+</div></div>
+</div></div>
+<div class='c1'>
+<hr class='hr1' /><h1 class='heading'><a name='GTC-specific.extensions'></a>GTC-specific extensions</h1><div class='c1in'><hr class='hr1in' /><div class='c2'>
+<hr class='hr2' /><h2 class='heading'><a name='incbin.directive'></a><a href='extensions.html#incbin.directive'><code>incbin</code></a><span class='widespace'>&#32;</span>directive</h2><div class='c2in'><hr class='hr2in' />
+<p>It is sometimes convenient to include binary files directly into your program, for example when using sprites. The<span class='widespace'>&#32;</span><a href='extensions.html#incbin.directive'><code>incbin</code></a><span class='widespace'>&#32;</span>directives allows you to do just that, without having to convert your data to a decimal or hexadecimal header (which can be memory-consuming on a TI).</p>
+<div class='c3'>
+<hr class='hr3' /><h3 class='heading'><a name='Using.incbin.to.declare.a.C.array'></a>Using<span class='widespace'>&#32;</span><a href='extensions.html#incbin.directive'><code>incbin</code></a><span class='widespace'>&#32;</span>to declare a C array</h3><div class='c3in'><hr class='hr3in' />
+<p>You can use<span class='widespace'>&#32;</span><a href='extensions.html#incbin.directive'><code>incbin</code></a><span class='widespace'>&#32;</span>to initialize the contents of a C array:</p>
+<pre>
+// The following declares a sprite using normal C initializers
+short sprite1[] = {
+    0xFFFF, 0x8008, 0x8008, 0xFFFF,
+    0xFF00, 0x8800, 0x8800, 0x8800,
+    0x00FF, 0x0088, 0x0088, 0x0088,
+    0xFFFF, 0x8008, 0x8008, 0xFFFF,
+};
+
+// The following declares a sprite using <a href='extensions.html#incbin.directive'><code>incbin</code></a>,
+// reading the contents from the file <em>sprite.bin</em>
+short sprite2[] = incbin "sprite.bin";
+</pre>
+<p>The first declaration creates an array of 16 shorts containing the hexadecimal numbers provided.
+The second declaration creates an array of 16 shorts whose representation in memory will be the same as<span class='widespace'>&#32;</span><code>sprite.bin</code>.</p>
+<p>Note that for the sake of portability,<span class='widespace'>&#32;</span><a href='http://tigcc.ticalc.org/doc/default.html#import_binary'><code>import_binary</code></a><span class='widespace'>&#32;</span>can be a useful 
+alternative, although there are several caveats: you will have to manually 
+declare the size of the array if<span class='widespace'>&#32;</span><code>sizeof</code><span class='widespace'>&#32;</span>is to be used, and you cannot use it 
+to declare a static array inside a function.</p>
+</div></div>
+<div class='c3'>
+<hr class='hr3' /><h3 class='heading'><a name='Using.incbin.within.an.asm.7b.7d.statement'></a>Using<span class='widespace'>&#32;</span><a href='extensions.html#incbin.directive'><code>incbin</code></a><span class='widespace'>&#32;</span>within an<span class='widespace'>&#32;</span><a href='extensions.html#asm.7b.7d.statement'><code>asm{}</code></a><span class='widespace'>&#32;</span>statement</h3><div class='c3in'><hr class='hr3in' />
+<p>Like in <a href='glossary.html#a68k'>a68k</a>, you can also use<span class='widespace'>&#32;</span><a href='extensions.html#incbin.directive'><code>incbin</code></a><span class='widespace'>&#32;</span>inside an<span class='widespace'>&#32;</span><a href='extensions.html#asm.7b.7d.statement'><code>asm{}</code></a><span class='widespace'>&#32;</span>statement to insert binary data.</p>
+<pre>
+asm {
+// Insert the values 1,2,3,4 after <code>label1</code>
+label1:
+    dc.w 1,2
+    dc.w 3,4
+// Insert the content of <code>sprite.bin</code> after <code>label2</code>
+label2:
+    incbin "sprite.bin"
+};
+</pre></div></div>
+</div></div>
+<div class='c2'>
+<hr class='hr2' /><h2 class='heading'><a name='asm.7b.7d.statement'></a><a href='extensions.html#asm.7b.7d.statement'><code>asm{}</code></a><span class='widespace'>&#32;</span>statement</h2><div class='c2in'><hr class='hr2in' />
+<p>GTC allows you to program in <a href='glossary.html#Assembly'>assembly</a>, with a syntax very close to that of <a href='glossary.html#a68k'>a68k</a>. In fact, it is powerful enough to write full assembly programs using only GTC!</p>
+<div class='c3'>
+<hr class='hr3' /><h3 class='heading'><a name='Inserting.an.asm.7b.7d.statement.in.the.code'></a>Inserting an<span class='widespace'>&#32;</span><a href='extensions.html#asm.7b.7d.statement'><code>asm{}</code></a><span class='widespace'>&#32;</span>statement in the code</h3><div class='c3in'><hr class='hr3in' /><div class='c4'>
+<hr class='hr4' /><h4 class='heading'><a name='Global.asm.7b.7d.statements'></a>Global<span class='widespace'>&#32;</span><a href='extensions.html#asm.7b.7d.statement'><code>asm{}</code></a><span class='widespace'>&#32;</span>statements</h4><div class='c4in'><hr class='hr4in' />
+<p>You can insert assembly code at the global level, for example:</p>
+<pre>
+asm {
+add_3_and_multiply_by_5:
+    add.w #3,d0
+    mulu #5,d0
+    rts
+};
+</pre>
+<p>This creates an assembly function named<span class='widespace'>&#32;</span><code>add_3_and_multiply_by_5</code><span class='widespace'>&#32;</span>that takes an input argument in<span class='widespace'>&#32;</span><code>d0</code>, adds 3 to it, multiplies it by 5, and returns the result in<span class='widespace'>&#32;</span><code>d0</code>.</p>
+<p>To use such a function in C code, you need to <a href='missing.html' class='invalidlink'>prototype</a> it:</p>
+<pre>
+short add_3_and_multiply_by_5(short x);
+</pre>
+<p>This tells GTC that your function takes a<span class='widespace'>&#32;</span><code>short</code><span class='widespace'>&#32;</span>named<span class='widespace'>&#32;</span><code>x</code><span class='widespace'>&#32;</span>as an input, and outputs a<span class='widespace'>&#32;</span><code>short</code>. Because of the <a href='specificities.html#Calling.convention'>calling convention</a>,<span class='widespace'>&#32;</span><code>x</code><span class='widespace'>&#32;</span>will be placed in<span class='widespace'>&#32;</span><code>d0</code>: see <a href='specificities.html#Default.calling.convention..28regparm.29'>default calling convention</a> for more information on where input arguments to assembly functions will be located.</p>
+</div></div>
+<div class='c4'>
+<hr class='hr4' /><h4 class='heading'><a name='Inline.asm.7b.7d.statements'></a>Inline<span class='widespace'>&#32;</span><a href='extensions.html#asm.7b.7d.statement'><code>asm{}</code></a><span class='widespace'>&#32;</span>statements</h4><div class='c4in'><hr class='hr4in' />
+<p>You can also insert assembly code within a function. This has the advantage over global assembly functions to eliminate the overhead associated with a function call.</p>
+<pre>
+void do_something(char *command) {
+    if (!strcmp(command,"off"))
+	asm { trap #4 };
+    else
+	printf("unknown command!\n");
+}
+</pre>
+<p>This functions turns off the calculator when<span class='widespace'>&#32;</span><code>command</code><span class='widespace'>&#32;</span>is<span class='widespace'>&#32;</span><code>"off"</code>, by calling<span class='widespace'>&#32;</span><code>trap #4</code>.</p>
+</div></div>
+</div></div>
+<div class='c3'>
+<hr class='hr3' /><h3 class='heading'><a name='Structure.of.an.asm.7b.7d.statement'></a>Structure of an<span class='widespace'>&#32;</span><a href='extensions.html#asm.7b.7d.statement'><code>asm{}</code></a><span class='widespace'>&#32;</span>statement</h3><div class='c3in'><hr class='hr3in' />
+<p>An<span class='widespace'>&#32;</span><a href='extensions.html#asm.7b.7d.statement'><code>asm{}</code></a><span class='widespace'>&#32;</span>statement is comprised of a set of declarations between the outer<span class='widespace'>&#32;</span><code>{</code><span class='widespace'>&#32;</span>and<span class='widespace'>&#32;</span><code>}</code><span class='widespace'>&#32;</span>braces.
+A declaration can be:</p>
+<ul><li> a <a href='glossary.html#68000'>68000</a> instruction, e.g.<span class='widespace'>&#32;</span><code>moveq #123,d0</code><span class='widespace'>&#32;</span></li><li> a label definition, e.g.<span class='widespace'>&#32;</span><code>my_function:</code><span class='widespace'>&#32;</span></li><li> a data declaration, e.g.<span class='widespace'>&#32;</span><code>dc.w 123,456,789</code><span class='widespace'>&#32;</span>or<span class='widespace'>&#32;</span><code>incbin "data.bin"</code><span class='widespace'>&#32;</span></li></ul>
+<p>You must separate different declarations either:</p>
+<ul><li> by putting them on separate lines
+</li><li> by simply concatenating them if the first is a label
+</li><li> by separating them with a semicolon (<code>;</code>) -- however you should absolutely avoid doing this outside<span class='widespace'>&#32;</span><a href='preprocessor.html#.23define'><code>#define</code></a>, as the behaviour may change some day
+</li></ul></div></div>
+<div class='c3'>
+<hr class='hr3' /><h3 class='heading'><a name='asm.7b.7d.interpretation.rules'></a><a href='extensions.html#asm.7b.7d.statement'><code>asm{}</code></a><span class='widespace'>&#32;</span>interpretation rules</h3><div class='c3in'><hr class='hr3in' />
+<p>The behaviour of GTC is indeed very close to that of<span class='widespace'>&#32;</span><a href='glossary.html#a68k'><code>a68k</code></a>. Like<span class='widespace'>&#32;</span><a href='glossary.html#a68k'><code>a68k</code></a>, GTC tries to optimize instructions when it is possible, for example<span class='widespace'>&#32;</span><code>add.w #3,d0</code><span class='widespace'>&#32;</span>will be optimized to<span class='widespace'>&#32;</span><code>addq.w #3,d0</code>. Like<span class='widespace'>&#32;</span><a href='glossary.html#a68k'><code>a68k</code></a>, you don't need to add a<span class='widespace'>&#32;</span><code>:</code><span class='widespace'>&#32;</span>after label names: however, while with<span class='widespace'>&#32;</span><a href='glossary.html#a68k'><code>a68k</code></a><span class='widespace'>&#32;</span>you can only do so if the label is placed on the first char of the line, with GTC you can do so any time as long as the label does not correspond to an assembly instruction.</p>
+<p>The most notable difference is perhaps that, where<span class='widespace'>&#32;</span><a href='glossary.html#a68k'><code>a68k</code></a><span class='widespace'>&#32;</span>uses specific commands like<span class='widespace'>&#32;</span><code>equ</code><span class='widespace'>&#32;</span>and<span class='widespace'>&#32;</span><code>equr</code><span class='widespace'>&#32;</span>to define macros, GTC simply uses the C preprocessor. This is very powerful, as it allows you to define constants just once and reuse them in C code. You can also use normal C conditionals like<span class='widespace'>&#32;</span><code>#if</code><span class='widespace'>&#32;</span>or<span class='widespace'>&#32;</span><code>#ifdef</code>, making conditional compilation easier.
+You can also interface your code with C much more easily, for example you have access to the<span class='widespace'>&#32;</span><code>sizeof</code><span class='widespace'>&#32;</span>operator:</p>
+<pre>
+int table[] = { 1,2,3,4 };
+
+asm {
+negate_table:
+    lea table,a0
+    moveq #sizeof(table)/2-1,d0
+\loop
+    neg.w (a0)+
+    dbra d0,\loop
+    rts
+};
+</pre>
+<p>After execution of<span class='widespace'>&#32;</span><code>negate_table</code>,<span class='widespace'>&#32;</span><code>table</code><span class='widespace'>&#32;</span>will be equal to<span class='widespace'>&#32;</span><code>{ -1,-2,-3,-4 }</code>.</p>
+<p>Note the<span class='widespace'>&#32;</span><code>\</code><span class='widespace'>&#32;</span>in<span class='widespace'>&#32;</span><code>\loop</code>: this means that the label is local. However, this notion differs slightly from that of<span class='widespace'>&#32;</span><a href='glossary.html#a68k'><code>a68k</code></a>: while the label is only valid between the surrounding two global labels in<span class='widespace'>&#32;</span><a href='glossary.html#a68k'><code>a68k</code></a>, the label is valid throughout the<span class='widespace'>&#32;</span><a href='extensions.html#asm.7b.7d.statement'><code>asm{}</code></a><span class='widespace'>&#32;</span>statement in GTC. It is often more convenient, as this example shows:</p>
+<pre>
+asm {
+\return_with_error
+    moveq #-1,d0
+    rts
+my_function:
+    addq.w #5,d0
+    bmi.s \return_with_error
+    tst.w d1
+    bmi.s \return_with_error
+    ... very long code (longer than 128 bytes) ...
+    rts
+};
+</pre>
+<p>In this example,<span class='widespace'>&#32;</span><code>\return_with_error</code><span class='widespace'>&#32;</span>is placed <em>before</em><span class='widespace'>&#32;</span><code>my_function</code><span class='widespace'>&#32;</span>because it allows the branches to<span class='widespace'>&#32;</span><code>\return_with_error</code><span class='widespace'>&#32;</span>to be short branches (<code>bmi.s</code>, 2 bytes) rather than long branches (<code>bmi.w</code>, 4 bytes). If GTC followed the rules of<span class='widespace'>&#32;</span><a href='glossary.html#a68k'><code>a68k</code></a>, then it would require<span class='widespace'>&#32;</span><code>\return_with_error</code><span class='widespace'>&#32;</span>to be a global, which can be inconvenient if you have lots of these. Instead, it allows you to structurally divide your program in logical<span class='widespace'>&#32;</span><a href='extensions.html#asm.7b.7d.statement'><code>asm{}</code></a><span class='widespace'>&#32;</span>blocks.</p>
+</div></div>
+<div class='c3'>
+<hr class='hr3' /><h3 class='heading'><a name='Extra.features.of.asm.7b.7d.statements'></a>Extra features of<span class='widespace'>&#32;</span><a href='extensions.html#asm.7b.7d.statement'><code>asm{}</code></a><span class='widespace'>&#32;</span>statements</h3><div class='c3in'><hr class='hr3in' />
+<p>Because<span class='widespace'>&#32;</span><a href='extensions.html#asm.7b.7d.statement'><code>asm{}</code></a><span class='widespace'>&#32;</span>statements rely on the C compiler architecture of GTC, there are lots of nice features, for example:</p>
+<pre>
+#define USE_KERNEL
+#include &lt;std.h&gt;
+asm {
+_main:
+    pea "Hello, world!"(pc)
+    jsr ST_helpMsg
+    addq.l #4,a7
+    rts
+};
+</pre>
+<p>What's most interesting in all this is that the C library required <b>no modification whatsoever</b> to allow using ROM calls in such a way: ROM calls are not defined twice, and there isn't even a conditional statement acting differently inside<span class='widespace'>&#32;</span><a href='extensions.html#asm.7b.7d.statement'><code>asm{}</code></a><span class='widespace'>&#32;</span>code and inside C code!
+This is possible because the assembler was able to interpret the C construct corresponding to<span class='widespace'>&#32;</span><code>ST_helpMsg</code>.</p>
+</div></div>
+<div class='c3'>
+<hr class='hr3' /><h3 class='heading'><a name='asm.7b.7d.special.operator.3a.__c__'></a><a href='extensions.html#asm.7b.7d.statement'><code>asm{}</code></a><span class='widespace'>&#32;</span>special operator:<span class='widespace'>&#32;</span><a href='extensions.html#asm.7b.7d.special.operator.3a.__c__'><code>__c__</code></a></h3><div class='c3in'><hr class='hr3in' />
+<p>This is an operator reserved to operands of instructions in<span class='widespace'>&#32;</span><a href='extensions.html#asm.7b.7d.statement'><code>asm{}</code></a><span class='widespace'>&#32;</span>statements.</p>
+<p>The reason why this operator exists is simple: assembly and C each have different arithmetic rules. For example, if you have the following code:</p>
+<pre>
+int table[] = { 1,2,3,4 };
+</pre>
+<p>then, while in C<span class='widespace'>&#32;</span><code>table+2</code><span class='widespace'>&#32;</span>will designate the address of<span class='widespace'>&#32;</span><code>table[2]</code><span class='widespace'>&#32;</span>(the number<span class='widespace'>&#32;</span><code>3</code>), in assembly<span class='widespace'>&#32;</span><code>table+2</code><span class='widespace'>&#32;</span>will designate the address of<span class='widespace'>&#32;</span><code>table[0]</code><span class='widespace'>&#32;</span>plus 2 bytes, which happens to be the address of<span class='widespace'>&#32;</span><code>table[1]</code>.</p>
+<p>So when you write:</p>
+<pre>
+asm {
+load_address:
+    lea table+2(pc),a0
+    rts
+};
+</pre>
+<p>then, as you would expect from assembly code,<span class='widespace'>&#32;</span><code>table+2</code><span class='widespace'>&#32;</span>corresponds to the address given by assembly arithmetic rules.</p>
+<p>This works with<span class='widespace'>&#32;</span><a href='preprocessor.html#.23define'><code>#define</code></a><span class='widespace'>&#32;</span>statements too:</p>
+<pre>
+asm {
+load_address:
+#define my_item table+2
+    lea my_item(pc),a0
+    rts
+};
+</pre>
+<p>But GTC allows you to do much more: you may want to access information that requires access to the full typing system of C, not just the addresses of different objects.
+The way you can access this typing system is by the<span class='widespace'>&#32;</span><a href='extensions.html#asm.7b.7d.special.operator.3a.__c__'><code>__c__</code></a><span class='widespace'>&#32;</span>operator: if you write</p>
+<pre>
+asm {
+load_address:
+    lea __c__(table+2)(pc),a0
+    rts
+};
+</pre>
+<p>then<span class='widespace'>&#32;</span><code>table+2</code><span class='widespace'>&#32;</span>will not be interpreted according to assembly rules, but according to C rules: that is,<span class='widespace'>&#32;</span><code>__c__(table+2)</code><span class='widespace'>&#32;</span>is the adress of<span class='widespace'>&#32;</span><code>table[2]</code>.</p>
+<p>GTC goes one step further, by automatically enclosing<span class='widespace'>&#32;</span><a href='preprocessor.html#.23define'><code>#define</code>s</a> written as part of C code in the<span class='widespace'>&#32;</span><a href='extensions.html#asm.7b.7d.special.operator.3a.__c__'><code>__c__</code></a><span class='widespace'>&#32;</span>operator:</p>
+<pre>
+int table[] = { 1,2,3,4 };
+#define third_item &amp;table[2]  // note: <em>table+2</em> would give the same results
+
+int *c_load_address() {
+    return third_item;
+}
+
+asm {
+load_address:
+    lea third_item(pc),a0
+    rts
+};
+</pre>
+<p>Here both<span class='widespace'>&#32;</span><code>c_load_address()</code><span class='widespace'>&#32;</span>and<span class='widespace'>&#32;</span><code>load_address()</code><span class='widespace'>&#32;</span>do the same thing, without ever having to define<span class='widespace'>&#32;</span><code>third_item</code><span class='widespace'>&#32;</span>twice!</p>
+</div></div>
+</div></div>
+<div class='c2'>
+<hr class='hr2' /><h2 class='heading'><a name='.40.40.prefix'></a><a href='extensions.html#.40.40.prefix'><code>@@</code></a><span class='widespace'>&#32;</span>prefix</h2><div class='c2in'><hr class='hr2in' />
+<p>The prefix<span class='widespace'>&#32;</span><a href='extensions.html#.40.40.prefix'><code>@@</code></a><span class='widespace'>&#32;</span>can be prepended to any identifier to prevent it from being <a href='missing.html' class='invalidlink'>expanded</a> by the <a href='missing.html' class='invalidlink'>preprocessor</a>.
+For example,<span class='widespace'>&#32;</span><code>@@MY_SYMBOL</code><span class='widespace'>&#32;</span>will expand to<span class='widespace'>&#32;</span><code>MY_SYMBOL</code><span class='widespace'>&#32;</span>even if<span class='widespace'>&#32;</span><code>MY_SYMBOL</code><span class='widespace'>&#32;</span>has been<span class='widespace'>&#32;</span><a href='preprocessor.html#.23define'><code>#define</code>d</a> to expand to<span class='widespace'>&#32;</span><code>0x1234</code>.</p>
+<p>This is not very useful in normal C code, but it can be useful in conjunction with other GTC extensions, mainly<span class='widespace'>&#32;</span><a href='extensions.html#asm.7b.7d.statement'><code>asm{}</code></a><span class='widespace'>&#32;</span>statements and <a href='missing.html' class='invalidlink'>pre-compiled headers</a>.</p>
+</div></div>
+</div></div></div>
+</body>
+</html>

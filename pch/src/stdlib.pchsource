@@ -1,0 +1,35 @@
+#var ldiv(n,d) D(({ldiv_t __r;long __n=(n),__d=(d);asm("move.l 0xC8,%%a5;move.l %2,%%d1;move.l %3,%%d0;move.l (%%a5,2720),%%a0;jsr (%%a0);move.l %%d1,%0;move.l %2,%%d1;move.l %3,%%d0;move.l (%%a5,2724),%%a0;jsr (%%a0);move.l %%d1,%1" : "=g"(__r.quot),"=g"(__r.rem) : "g"(__n),"g"(__d) : "a0","a1","a5","d0","d1","d2");__r;}))
+
+#var NULL D(((void*)0))
+#var RAND_MAX D(32767)
+#var atexit_t typedef CALLBACK void(*atexit_t)(void);
+#var compare_t typedef CALLBACK short(*compare_t)(const void*elem1,const void*elem2);
+#var div_t typedef struct{short quot,rem;}div_t;
+#var ldiv_t typedef struct{long quot,rem;}ldiv_t;
+#var size_t typedef unsigned long size_t;
+#var abort() D((_rom_call(void,(const char*),E6)("ABNORMAL PROGRAM TERMINATION"),exit(0)))
+#var abs(x) D(({typeof(x) __x = (x); __x >= 0 ? __x : -__x;}))
+#var atexit short atexit(atexit_t)__ATTR_LIB_ASM__;
+#var atoi short atoi(const char*)__ATTR_LIB_C__;
+#var atol long atol(const char*)__ATTR_LIB_C__;
+#var bsearch void *bsearch(const void*,const void*,short,short,compare_t)__ATTR_LIB_C__;
+#var calloc void *calloc(short,short)__ATTR_LIB_ASM__;
+#var div(n,d) D(({short __n=(n),__d=(d);div_t __r;__r.quot=__n/__d;__r.rem=__n%__d;__r;}))
+#var exit(n) D(({(n)?_rom_call(void,(short),152)(n):0;__exit();}))
+#var __exit volatile void __exit(void)__ATTR_LIB_ASM_NORETURN__;
+#var fabs(x) D(_tios_float_1(106,x,float))
+#var free D(_rom_call(void,(void*),A3))
+#var malloc D(_rom_call(void*,(long),A2))
+#var max(a,b) D(({typeof(a) __a = (a); typeof(b) __b = (b); (__a > __b) ? __a : __b;}))
+#var min(a,b) D(({typeof(a) __a = (a); typeof(b) __b = (b); (__a < __b) ? __a : __b;}))
+#var qsort void qsort(void*,short,short,compare_t)__ATTR_LIB_C__;
+#var rand short rand(void)__ATTR_LIB_ASM__;
+#var random(x) D(((short)((long)(unsigned short)rand()*(unsigned short)(x)/32768)))
+#var randomize() D(srand(*(volatile char*)0x600017))
+#var realloc void *realloc(void*,long)__ATTR_LIB_ASM__;
+#var __randseed extern long __randseed;
+#var srand(x) D((__randseed=(x)))
+#var strtol long strtol(const char*,char**,short)__ATTR_LIB_C__;
+#var strtoul unsigned long strtoul(const char*,char**,short)__ATTR_LIB_C__;
+#var atof float atof(const char*)__ATTR_LIB_ASM__;
+
