@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+<head>
+	<title>GTC Command-line options - GTC documentation</title>
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+	<link rel='stylesheet' type='text/css' href='layout/default.css' />
+</head>
+<body>
+<p><a href='index.html'>◄ Back to index</a></p>
+<div class='c0'>
+<h1>GTC Command-line options</h1>
+<p>The computer version of GTC has a number of options available on the command-line. They are all listed here.</p>
+<p>Please note that currently, these options are not available for the FlashApp version.</p>
+<div class='toc'><div class='toctop'><div class='tocbot'><div class='toc-content'>
+<b>Contents:</b><ul>
+  <li><a href='#Basic.usage'>Basic usage</a>
+  <ul>
+    <li><a href='#Invocation'>Invocation</a></li>
+    <li><a href='#Adding.options'>Adding options</a></li>
+  </ul></li>
+  <li><a href='#List.of.all.options'>List of all options</a>
+  <ul>
+    <li><a href='#Options.affecting.output'>Options affecting output</a>
+    <ul>
+      <li><a href='#-o.switch'>-o switch</a></li>
+      <li><a href='#--folder.switch'>--folder switch</a></li>
+      <li><a href='#--output.switch'>--output switch</a></li>
+    </ul></li>
+    <li><a href='#Preprocessor.options'>Preprocessor options</a>
+    <ul>
+      <li><a href='#-I.switch'>-I switch</a></li>
+      <li><a href='#-D.switch'>-D switch</a></li>
+    </ul></li>
+    <li><a href='#Optimization.options'>Optimization options</a>
+    <ul>
+      <li><a href='#-exe.switch'>-exe switch</a></li>
+      <li><a href='#-mno-bss.switch'>-mno-bss switch</a></li>
+    </ul></li>
+    <li><a href='#Other.options'>Other options</a>
+    <ul>
+      <li><a href='#--.separator'>-- separator</a></li>
+    </ul></li>
+  </ul></li>
+</ul>
+</div></div></div></div>
+<div class='c1'>
+<hr class='hr1' /><h1 class='heading'><a name='Basic.usage'></a>Basic usage</h1><div class='c1in'><hr class='hr1in' /><div class='c2'>
+<hr class='hr2' /><h2 class='heading'><a name='Invocation'></a>Invocation</h2><div class='c2in'><hr class='hr2in' />
+<p>To compile a file named<span class='widespace'>&#32;</span><code>hello.c</code>, open a command-line prompt in the folder where<span class='widespace'>&#32;</span><code>hello.c</code><span class='widespace'>&#32;</span>is stored, and type:</p>
+<pre>
+gtc hello.c
+</pre>
+<p>This will create files named<span class='widespace'>&#32;</span><code>hello.89z</code>,<span class='widespace'>&#32;</span><code>hello.9xz</code><span class='widespace'>&#32;</span>and<span class='widespace'>&#32;</span><code>hello.v2z</code><span class='widespace'>&#32;</span>(or only some of those, if your program is specific to a calculator model). You can now run them after sending them to your calculator or to an emulator.</p>
+</div></div>
+<div class='c2'>
+<hr class='hr2' /><h2 class='heading'><a name='Adding.options'></a>Adding options</h2><div class='c2in'><hr class='hr2in' />
+<p>You can modify the behaviour of GTC with command-line options (or command-line <em>switches</em>). Their position on the command-line does not matter. For example, if you want to use the<span class='widespace'>&#32;</span><a href='cmdline.html#-o.switch'><code>-o</code><span class='widespace'>&#32;</span>switch</a> to create files named<span class='widespace'>&#32;</span><code>somename.89z</code>,<span class='widespace'>&#32;</span><code>somename.9xz</code><span class='widespace'>&#32;</span>and<span class='widespace'>&#32;</span><code>somename.v2z</code>, you can type:</p>
+<pre>
+gtc hello.c -o somename
+</pre>
+<p>Or, equivalently:</p>
+<pre>
+gtc -o somename hello.c
+</pre>
+<p>See below for a complete list of options.</p>
+</div></div>
+</div></div>
+<div class='c1'>
+<hr class='hr1' /><h1 class='heading'><a name='List.of.all.options'></a>List of all options</h1><div class='c1in'><hr class='hr1in' /><div class='c2'>
+<hr class='hr2' /><h2 class='heading'><a name='Options.affecting.output'></a>Options affecting output</h2><div class='c2in'><hr class='hr2in' /><div class='c3'>
+<hr class='hr3' /><h3 class='heading'><a name='-o.switch'></a><code>-o</code><span class='widespace'>&#32;</span>switch</h3><div class='c3in'><hr class='hr3in' />
+<p>By default,<span class='widespace'>&#32;</span><code>gtc hello.c foo.c bar.c</code><span class='widespace'>&#32;</span>results in an executable named<span class='widespace'>&#32;</span><code>hello.89z</code><span class='widespace'>&#32;</span>or<span class='widespace'>&#32;</span><code>hello.v2z</code>. You can specify other names with this switch, for example<span class='widespace'>&#32;</span><code>gtc hello.c foo.c bar.c -o somename</code><span class='widespace'>&#32;</span>will instead create an executable named<span class='widespace'>&#32;</span><code>somename.89z</code><span class='widespace'>&#32;</span>or<span class='widespace'>&#32;</span><code>somename.v2z</code>.</p>
+</div></div>
+<div class='c3'>
+<hr class='hr3' /><h3 class='heading'><a name='--folder.switch'></a><code>--folder</code><span class='widespace'>&#32;</span>switch</h3><div class='c3in'><hr class='hr3in' />
+<p>By default, calculator executables are stored in the<span class='widespace'>&#32;</span><code>main</code><span class='widespace'>&#32;</span>folder. You can store them in the folder<span class='widespace'>&#32;</span><code>somefold</code><span class='widespace'>&#32;</span>with the switch<span class='widespace'>&#32;</span><code>--folder=somefold</code>.</p>
+</div></div>
+<div class='c3'>
+<hr class='hr3' /><h3 class='heading'><a name='--output.switch'></a><code>--output</code><span class='widespace'>&#32;</span>switch</h3><div class='c3in'><hr class='hr3in' />
+<p>By default,<span class='widespace'>&#32;</span><code>gtc hello.c -o somename</code><span class='widespace'>&#32;</span>results in an executable named<span class='widespace'>&#32;</span><code>somename.89z</code>; the name of the program on the calculator will thus be<span class='widespace'>&#32;</span><code>somename()</code>. You can change this with the switch<span class='widespace'>&#32;</span><code>--output=myprog</code>:<span class='widespace'>&#32;</span><code>gtc hello.c -o somename --output=myprog</code><span class='widespace'>&#32;</span>creates an executable named<span class='widespace'>&#32;</span><code>somename.89z</code><span class='widespace'>&#32;</span>containing a program whose name on the calculator will be<span class='widespace'>&#32;</span><code>myprog()</code>.</p>
+</div></div>
+</div></div>
+<div class='c2'>
+<hr class='hr2' /><h2 class='heading'><a name='Preprocessor.options'></a>Preprocessor options</h2><div class='c2in'><hr class='hr2in' /><div class='c3'>
+<hr class='hr3' /><h3 class='heading'><a name='-I.switch'></a><code>-I</code><span class='widespace'>&#32;</span>switch</h3><div class='c3in'><hr class='hr3in' />
+<p>The<span class='widespace'>&#32;</span><code>-I folder</code><span class='widespace'>&#32;</span>(or<span class='widespace'>&#32;</span><code>-Ifolder</code>) switch tells GTC to look for include files not only in the current directory, but also in the folder<span class='widespace'>&#32;</span><code>folder</code>.
+You can use this switch several times to include several folders.</p>
+</div></div>
+<div class='c3'>
+<hr class='hr3' /><h3 class='heading'><a name='-D.switch'></a><code>-D</code><span class='widespace'>&#32;</span>switch</h3><div class='c3in'><hr class='hr3in' />
+<p>The<span class='widespace'>&#32;</span><code>-D SYMBOL</code><span class='widespace'>&#32;</span>(or<span class='widespace'>&#32;</span><code>-DSYMBOL</code>) switch tells GTC to<span class='widespace'>&#32;</span><a href='preprocessor.html#.23define'><code>#define</code></a><span class='widespace'>&#32;</span>the symbol<span class='widespace'>&#32;</span><code>SYMBOL</code>, with no specific value.
+The<span class='widespace'>&#32;</span><code>-D SYMBOL=value</code><span class='widespace'>&#32;</span>(or<span class='widespace'>&#32;</span><code>-DSYMBOL=value</code>) switch tells GTC to<span class='widespace'>&#32;</span><a href='preprocessor.html#.23define'><code>#define</code></a><span class='widespace'>&#32;</span>the symbol<span class='widespace'>&#32;</span><code>SYMBOL</code>, with the value<span class='widespace'>&#32;</span><code>value</code>.
+You can use this switch several times to define several symbols.</p>
+</div></div>
+</div></div>
+<div class='c2'>
+<hr class='hr2' /><h2 class='heading'><a name='Optimization.options'></a>Optimization options</h2><div class='c2in'><hr class='hr2in' />
+<p>It is in the philosophy of GTC to have default options as sensible as possible, so optimization options are kept to a bare minimum. Furthermore, optimizations are <em>always</em> enabled.</p>
+<div class='c3'>
+<hr class='hr3' /><h3 class='heading'><a name='-exe.switch'></a><code>-exe</code><span class='widespace'>&#32;</span>switch</h3><div class='c3in'><hr class='hr3in' />
+<p>This switch will make your program much smaller and very slightly faster, at the expense of a short loading time (usually less than half a second). However note that because it adds an unpacker to your program, it will make very small programs (less than 3-4 kilobytes) larger, so it should not be used in this case. It has the same effect as defining the<span class='widespace'>&#32;</span><a href='missing.html' class='invalidlink'><code>EXE_OUT</code></a><span class='widespace'>&#32;</span>preprocessor symbol.</p>
+<p>It can be an interesting way to work around <a href='glossary.html#AMS'>AMS</a>'s <a href='missing.html' class='invalidlink'>program size limit</a> for <a href='glossary.html#AMS'>AMS</a> version 2.0x, because a program that exceeds the size limit when uncompressed can be compressed to a size below the limit.</p>
+</div></div>
+<div class='c3'>
+<hr class='hr3' /><h3 class='heading'><a name='-mno-bss.switch'></a><code>-mno-bss</code><span class='widespace'>&#32;</span>switch</h3><div class='c3in'><hr class='hr3in' />
+<p>This switch disables the creation of BSS sections. In some cases it has absolutely no effect, in other cases it will either make the program faster and smaller, or make it much larger (if you are using large global arrays).</p>
+</div></div>
+</div></div>
+<div class='c2'>
+<hr class='hr2' /><h2 class='heading'><a name='Other.options'></a>Other options</h2><div class='c2in'><hr class='hr2in' /><div class='c3'>
+<hr class='hr3' /><h3 class='heading'><a name='--.separator'></a><code>--</code><span class='widespace'>&#32;</span>separator</h3><div class='c3in'><hr class='hr3in' />
+<p>Not an option <em>per se</em>, but a way to indicate that all arguments after<span class='widespace'>&#32;</span><code>--</code><span class='widespace'>&#32;</span>are really filenames and not command-line switches.
+For example<span class='widespace'>&#32;</span><code>gtc -DHELLO hello.c -- foo.c -file-with-dashes-.c</code><span class='widespace'>&#32;</span>will compile the 3 files<span class='widespace'>&#32;</span><code>hello.c</code>,<span class='widespace'>&#32;</span><code>foo.c</code><span class='widespace'>&#32;</span>and<span class='widespace'>&#32;</span><code>-file-with-dashes-.c</code>, with the single option<span class='widespace'>&#32;</span><code>-DHELLO</code>. Without<span class='widespace'>&#32;</span><code>--</code><span class='widespace'>&#32;</span>the file<span class='widespace'>&#32;</span><code>-file-with-dashes-.c</code><span class='widespace'>&#32;</span>would have been understood as an (invalid) command-line option.
+</div></div>
+</div></div>
+</div></div></p></div>
+</body>
+</html>

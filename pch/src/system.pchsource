@@ -1,0 +1,63 @@
+
+#var FALSE D(0)
+#var TRUE D(1)
+#var Bool enum Bool {};
+
+#var DEF_QUEUE typedef struct{unsigned short Head;unsigned short Tail;unsigned short Size;unsigned short Used;unsigned short Buffer[];}DEF_QUEUE;
+#var HANDLE typedef unsigned short HANDLE;
+#var QUEUE(n) D(struct{unsigned short Head,Tail,Size,Used,Buffer[n/2];})
+#var Timer_Callback_t typedef CALLBACK void(*Timer_Callback_t)(void);
+#var BATT_TIMER D(1)
+#var APD_TIMER D(2)
+#var LIO_TIMER D(3)
+#var CURSOR_TIMER D(4)
+#var MISC_TIMER D(5)
+#var USER_TIMER D(6)
+
+#var AB_prodid D(_rom_call(void,(char*),29D))
+#var AB_prodname D(_rom_call(void,(char*),29E))
+#var AB_serno D(_rom_call(short,(char*),29F))
+#var ASM_call(x) D(({asm volatile{movem.l d0-d7/a0-a6,-(sp)};ASM_fastcall(x);asm volatile{movem.l (sp)+,d0-d7/a0-a6};}))
+#var ASM_fastcall(x) D((((void(*)())(x))()))
+#var CB_fetchTEXT D(_rom_call(short,(HANDLE*,__pulong),C2))
+#var CB_replaceTEXT D(_rom_call(short,(char*,long,short),C1))
+#var CU_restore D(_rom_call(void,(short),C3))
+#var CU_start D(_rom_call(short,(void),C4))
+#var CU_stop D(_rom_call(short,(void),C5))
+
+#var EX_patch D(_rom_call(void,(void*,void*),15A))
+#var HelpKeys D(_rom_call(void,(void),181))
+#var idle D(_rom_call(void,(void),29B))
+#var kbd_queue void *kbd_queue(void)__ATTR_LIB_ASM__;
+#var NeedStack D(_rom_call(void,(short),A4))
+#var off D(_rom_call(void,(void),29A))
+#var OSCheckBreak D(_rom_call(short,(void),EC))
+#var OSClearBreak D(_rom_call(void,(void),ED))
+#var OSContrastDn() D(({asm{move.l d3,-(a7);move.l d4,-(a7)};_rom_call(void,(void),297) ();asm{move.l (a7)+,d4;move.l (a7)+,d3};}))
+#var OSContrastUp() D(({asm{move.l d3,-(a7);move.l d4,-(a7)};_rom_call(void,(void),296) ();asm{move.l (a7)+,d4;move.l (a7)+,d3};}))
+#var OSDisableBreak D(_rom_call(void,(void),EF))
+#var OSEnableBreak D(_rom_call(void,(void),EE))
+#var OSFreeTimer D(_rom_call(short,(short),F1))
+#var OSRegisterTimer D(_rom_call(short,(short,long),F0))
+#var OSReset D(_rom_call(void,(void),294))
+#var OSSetSR D(_rom_call(short,(short),29C))
+#var OSTimerCurVal D(_rom_call(unsigned long,(short),F2))
+#var OSTimerExpired D(_rom_call(short,(short),F3))
+#var OSTimerRestart D(_rom_call(unsigned long,(short),F4))
+#var OSVFreeTimer short OSVFreeTimer(short)__ATTR_LIB_ASM__;
+#var OSVRegisterTimer short OSVRegisterTimer(short,long,Timer_Callback_t)__ATTR_LIB_ASM__;
+#var QModeKey D(_rom_call(short,(short),182))
+#var QSysKey D(_rom_call(short,(short),183))
+#var SumStoChkMem D(_rom_call(short,(void),295))
+#var WordInList D(_rom_call(short,(short,__pushort),184))
+#var XR_stringPtr(strno) D((AMS_1xx?_rom_call(const char*,(short),293)(strno):_rom_call(const char*,(long),293)(strno)))
+#var OSdequeue D(_rom_call(short,(__pushort,void*),3AA))
+#var OSenqueue D(_rom_call(short,(short,void*),3A9))
+#var OSqclear D(_rom_call(void,(void*),3AD))
+#var OSqhead D(_rom_call(unsigned short,(__pushort,void*),3AC))
+#var OSqinquire D(_rom_call(short,(__pushort,void*),3AB))
+#var ReleaseDate D(((const char*const)(_rom_call_addr(43F))))
+#var ReleaseVersion D(((const char*const)(_rom_call_addr(440))))
+
+
+#var enter_ghost_space() D(({extern unsigned long *__save__sp__;enter_ghost_space();(*__save__sp__)|=0x40000;})) void @@enter_ghost_space(void)__ATTR_LIB_ASM__;

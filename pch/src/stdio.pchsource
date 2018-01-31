@@ -1,0 +1,69 @@
+#var vcbprintf_callback_t typedef void(*vcbprintf_callback_t)(char,void**)__ATTR_TIOS_CALLBACK__;
+#var __vcbprintf__type__ typedef void(*__vcbprintf__type__)(vcbprintf_callback_t,void**,const char*,void*)__ATTR_TIOS__;
+
+
+#var EOF D((-1))
+#var NULL D(((void*)0))
+#var TMP_MAX D(152587890625)
+#var FILE typedef struct{char*fpos;void*base;unsigned short handle;short flags;short unget;unsigned long alloc;unsigned short buffincrement;}FILE;
+#var _F_READ D(1)
+#var _F_WRIT D(2)
+#var _F_RDWR D(3)
+#var _F_ERR D(16)
+#var _F_EOF D(32)
+#var _F_BIN D(64)
+
+#var fpos_t typedef unsigned long fpos_t;
+#var SEEK_SET D(0)
+#var SEEK_CUR D(1)
+#var SEEK_END D(2)
+
+#var size_t typedef unsigned long size_t;
+#var va_list typedef void*va_list;
+#var vcbprintf_Callback_t D(vcbprintf_callback_t)
+#var clearerr(f) D(((void)(((f)->flags)&=~(_F_EOF|_F_ERR))))
+#var clrscr void clrscr(void)__ATTR_LIB_ASM__;
+#var fclose short fclose(FILE*)__ATTR_LIB_C__;
+#var feof(f) D((((f)->flags)&_F_EOF))
+#var ferror(f) D((((f)->flags)&_F_ERR))
+#var fflush(f) D(((f)->unget=0))
+#var fgetc short fgetc(FILE*)__ATTR_LIB_C__;
+#var fgetchar() D(({register short __c=_rom_call(short,(void),51)();fputchar((__c=='\r')?'\n':__c);}))
+#var fgetpos(f,p) D(((*(p)=ftell(f))==EOF))
+#var fgets char *fgets(char*,short,FILE*)__ATTR_LIB_C__;
+#var fopen FILE *fopen(const char*,const char*)__ATTR_LIB_C__;
+#var fprintf short fprintf(FILE*,const char*,...)__ATTR_TIOS__;
+#var fputc short fputc(short,FILE*)__ATTR_TIOS_CALLBACK__;
+#var fputchar short fputchar(short)__ATTR_TIOS_CALLBACK__;
+#var fputs short fputs(const char*,FILE*)__ATTR_LIB_ASM__;
+#var fread unsigned short fread(void*,short,short,FILE*)__ATTR_LIB_C__;
+#var freopen(n,m,f) D((fclose(f),(f)=fopen((n),(m)),(f)))
+#var fseek short fseek(FILE*,long,short)__ATTR_LIB_C__;
+#var fsetbufsize void fsetbufsize(short,FILE*)__ATTR_LIB_C__;
+#var fsetpos(f,p) D(fseek((f),*(p),SEEK_SET))
+#var ftell long ftell(const FILE*)__ATTR_LIB_C__;
+#var fwrite unsigned short fwrite(const void*,short,short,FILE*)__ATTR_LIB_C__;
+#var getc D(fgetc)
+#var getchar D(fgetchar)
+#var gets(s) D(({register short __c;register char*__p=s;while((*__p++=fputchar(((__c=_rom_call(short,(void),51)())=='\r')?'\n':__c))!='\n');__p[-1]=0;s;}))
+#var printf void printf(const char*,...)__ATTR_TIOS__;
+#var printf_xy(x,y,f...) D(({char __s[200];_rom_call(short,(char*,const char*,...),53)(__s ,##f);_rom_call(void,(short,short,const char*,short),1A9)(x,y,__s,4);}))
+#var putc D(fputc)
+#var putchar D(fputchar)
+#var puts void puts(const char*)__ATTR_LIB_ASM__;
+#var remove D(unlink)
+#var rename short rename(const char*,const char*)__ATTR_LIB_C__;
+#var rewind(f) D(((void)(fseek((f),0,SEEK_SET),(f)->flags&=~_F_ERR)))
+#var sprintf D(_rom_call(short,(char*,const char*,...),53))
+#var strerror D(_rom_call(char*,(short),27D))
+#var strputchar void strputchar(char,void**)__ATTR_TIOS_CALLBACK__;
+#var tmpnam char *tmpnam(char*)__ATTR_LIB_C__;
+#var ungetc(c,f) D(((f)->unget=((c)|0x8000)))
+#var unlink short unlink(const char*)__ATTR_LIB_C__;
+#var vcbprintf D(({register long __a=32+(long)(_rom_call_addr(53));(__vcbprintf__type__)(__a+*(short*)__a);}))
+#var vfprintf(s,f,a) D(vcbprintf((vcbprintf_callback_t)fputc,(void**)(s),(f),(a)))
+#var vprintf(f,a) D(vcbprintf((vcbprintf_callback_t)fputchar,NULL,(f),(a)))
+#var vsprintf(b,f,a) D(((void)({void*__p=(b);vcbprintf((vcbprintf_callback_t)strputchar,&__p,(f),(a));*(char*)__p=0;})))
+
+
+#var __FERROR(f) D(({(f)->flags|=_F_ERR; return EOF;}))

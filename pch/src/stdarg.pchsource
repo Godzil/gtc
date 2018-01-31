@@ -1,0 +1,6 @@
+
+#var va_list typedef void*va_list;
+#var va_arg(ap,type) D((*(type*)(((*(char**)&(ap))+=((sizeof(type)+1)&0xFFFE))-(((sizeof(type)+1)&0xFFFE)))))
+#var va_end(ap) D(((void)0))
+#var va_start(ap,parmN) D(((void)((ap)=(va_list)((char*)(&parmN)+((sizeof(parmN)+1)&0xFFFE)))))
+

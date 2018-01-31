@@ -1,0 +1,3 @@
+Quick install: type "./configure && make -j && sudo make install".
+
+More information is available in "doc/building.html".

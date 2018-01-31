@@ -1,0 +1,9 @@
+
+#var NULL D(((void*)0))
+#var size_t typedef unsigned long size_t;
+#var _memset D(_rom_call(void*,(void*,short,long),27B))
+#var memchr D(_rom_call(void*,(const void*,short,long),273))
+#var memcmp D(_rom_call(short,(const void*,const void*,long),270))
+#var memcpy D(_rom_call(void*,(void*,const void*,long),26A))
+#var memmove D(_rom_call(void*,(void*,const void*,long),26B))
+#var memset D(_rom_call(void*,(void*,short,long),27C))

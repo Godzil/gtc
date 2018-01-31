@@ -1,0 +1,6 @@
+#var alphaLockOff D(_rom_call(void,(unsigned char*),482))
+#var alphaLockOn D(_rom_call(void,(unsigned char*),481))
+#var GetAlphaStatus D(_rom_call(unsigned char,(void),164))
+#var KeyYesOrNo D(_rom_call(short,(short),3EB))
+#var restoreAlphaLock D(_rom_call(void,(unsigned char*),483))
+#var SetAlphaStatus D(_rom_call(void,(char),163))

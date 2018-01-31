@@ -1,0 +1,48 @@
+
+#var NULL D(((void*)0))
+#var bcd typedef struct{unsigned short exponent;unsigned long long mantissa;}bcd;
+#var FALSE D(0)
+#var TRUE D(1)
+
+#var ESQ typedef unsigned char ESQ;
+#var CESI typedef const ESQ*CESI;
+#var ESI typedef ESQ*ESI;
+#var EStackIndex D(ESI)
+#var Quantum D(ESQ)
+#var SYM_STR typedef CESI SYM_STR;
+#var POSINT_TAG D(31)
+#var NEGINT_TAG D(32)
+#var FLOAT_TAG D(35)
+#var BCD_TAG D(35)
+#var UNDEF_TAG D(42)
+#var FALSE_TAG D(43)
+#var TRUE_TAG D(44)
+#var STR_TAG D(45)
+#var LIST_TAG D(217)
+#var USERFUNC_TAG D(218)
+#var MATRIX_TAG D(219)
+#var FUNC_TAG D(220)
+#var DATA_TAG D(221)
+#var GDB_TAG D(222)
+#var PIC_TAG D(223)
+#var TEXT_TAG D(224)
+#var FIG_TAG D(225)
+#var MAC_TAG D(226)
+#var END_TAG D(229)
+#var ASM_TAG D(243)
+#var OTH_TAG D(248)
+
+#var ti_float typedef float ti_float;
+#var top_estack D((*((ESI*)(_rom_call_addr(109)))))
+#var ArgCount() D((RemainingArgCnt(top_estack)))
+#var EX_getArg D(_rom_call(ESI,(short),BE))
+#var EX_getBCD D(_rom_call(short,(short,float*),BF))
+#var GetArgType(p) D((*(CESI)(p)))
+#var GetFloatArg(p) D(({float __f;(ESI)(p)-=10;_rom_call(void*,(),26A)(&__f,(ESI)(p)+1,9L);((char*)&__f)[9]=0;__f;}))
+#var GetIntArg(p) D(({register unsigned short __n=*(--(ESI)(p));register unsigned long __s=0;while(__n--)__s=(__s<<8)+*(--(unsigned char*)(p));(ESI)(p)--;__s;}))
+#var GetLongLongArg(p) D(({register unsigned short __n=*(--(ESI)(p));register unsigned long long __s=0;while(__n--)__s=(__s<<8)+*(--(unsigned char*)(p));(ESI)(p)--;__s;}))
+#var GetStrnArg(p) D(({(ESI)(p)-=2;while(*(ESI)(p)--);(const char*)((ESI)(p)+2);}))
+#var GetSymstrArg(p) D(({register ESI __t=(ESI)(p);(ESI)(p)-=2;while(*(ESI)(p)--);(const char*)(__t-1);}))
+#var InitArgPtr(p) D(((void)((p)=top_estack)))
+#var SkipArg(p) D(((void)((p)=_rom_call(ESI,(ESI),10A)(p))))
+#var RemainingArgCnt D(_rom_call(unsigned short,(CESI),3C3))

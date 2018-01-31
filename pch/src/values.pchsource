@@ -1,0 +1,30 @@
+#var MAXINT D(0x7FFF)
+#var HIBITI D(0x8000)
+
+
+#var _DEXPLEN D(15)
+#var _EXPBASE D(10)
+#var _FEXPLEN D(15)
+#var _IEEE D(0)
+#var BITSPERBYTE D(8)
+#var DMAXEXP D(999)
+#var DMAXPOWTWO D(3321)
+#var DMINEXP D((-999))
+#var DSIGNIF D(64)
+#var FMAXEXP D(999)
+#var FMAXPOWTWO D(3321)
+#var FMINEXP D((-999))
+#var FSIGNIF D(56)
+#var HIBITL D(0x80000000L)
+#var HIBITS D(0x8000)
+#var LN_MAXDOUBLE D((2303.58509299))
+#var LN_MINDOUBLE D((-2300.2825079))
+#var MAXDOUBLE D((9.999999999999999e999))
+#var MAXFLOAT D((9.999999999999999e999))
+#var MAXLONG D(0x7FFFFFFFL)
+#var MAXSHORT D(0x7FFF)
+#var MINDOUBLE D((1e-999))
+#var MINFLOAT D((1e-999))
+#var bcd typedef struct{unsigned short exponent;unsigned long long mantissa;}bcd;
+#var ti_float typedef float ti_float;
+

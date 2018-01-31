@@ -1,0 +1,20 @@
+#!/bin/sh
+rm -f config.mk
+touch config.mk
+if [ "x$1" = "x--prefix" ]; then
+    if test -z "$2"; then
+	echo "missing argument to $1" 1>&2; exit 1
+    fi
+    echo "using prefix $2..."
+    echo "prefix=$2" >> config.mk
+    shift 2
+else
+    deflt_prefix=/usr/local
+    echo "using default prefix $deflt_prefix..."
+    echo "prefix=$deflt_prefix" >> config.mk
+fi
+if test "$1"; then
+    echo "error: too many arguments" 1>&2; exit 1
+fi
+echo "GTC_ARCH_DEFINES = -DNDEBUG -DMC68000 -DCPU_DEFINED -DPC -DUNIXOID -DAS -DASM -DPCH -DREGPARM -DBCDFLT -DNOFLOAT -DVCG" >> config.mk
+echo configuration OK ! 1>&2

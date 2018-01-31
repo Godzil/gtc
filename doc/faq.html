@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+<head>
+	<title>Frequently Asked Questions - GTC documentation</title>
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+	<link rel='stylesheet' type='text/css' href='layout/default.css' />
+</head>
+<body>
+<p><a href='index.html'>◄ Back to index</a></p>
+<div class='c0'>
+<h1>Frequently Asked Questions</h1>
+<div class='toc'><div class='toctop'><div class='tocbot'><div class='toc-content'>
+<b>Contents:</b><ul>
+  <li><a href='#Common.issues'>Common issues</a>
+  <ul>
+    <li><a href='#.28on-calc.29.I.keep.getting.errors.such.as..22not.enough.memory.to.compile.function.abc.22'>(on-calc) I keep getting errors such as "not enough memory to compile function abc"</a></li>
+  </ul></li>
+  <li><a href='#Differences.between.GTC.and.TIGCC'>Differences between GTC and TIGCC</a>
+  <ul>
+    <li><a href='#How.can.I.port.my.program.from.TIGCC.to.GTC.3f'>How can I port my program from TIGCC to GTC?</a></li>
+    <li><a href='#How.can.I.make.sure.my.GTC.program.can.be.compiled.with.TIGCC.too.3f'>How can I make sure my GTC program can be compiled with TIGCC too?</a></li>
+  </ul></li>
+</ul>
+</div></div></div></div>
+<div class='c1'>
+<hr class='hr1' /><h1 class='heading'><a name='Common.issues'></a>Common issues</h1><div class='c1in'><hr class='hr1in' /><div class='c2'>
+<hr class='hr2' /><h2 class='heading'><a name='.28on-calc.29.I.keep.getting.errors.such.as..22not.enough.memory.to.compile.function.abc.22'></a>(on-calc) I keep getting errors such as "<code>not enough memory to compile function <em>abc</em></code>"</h2><div class='c2in'><hr class='hr2in' />
+<p>This could be because you do not have enough free RAM (more than 100kb is recommended), but if you have enough RAM it is probably because the function <em>abc</em> is too large to fit in the memory of the calculator. You will need to split into smaller functions to avoid the error.</p>
+<p>Another reason could be that you have a<span class='widespace'>&#32;</span><a href='preprocessor.html#.23define'><code>#define</code></a><span class='widespace'>&#32;</span>with a large body, or a very
+large number of global declarations. This shouldn't be a problem for most
+programs, but if you think you are in this case, you can try to solve it with<span class='widespace'>&#32;</span><code>#undef</code><span class='widespace'>&#32;</span>or by creating a <a href='missing.html' class='invalidlink'>precompiled header</a>.</p>
+</div></div>
+</div></div>
+<div class='c1'>
+<hr class='hr1' /><h1 class='heading'><a name='Differences.between.GTC.and.TIGCC'></a>Differences between GTC and TIGCC</h1><div class='c1in'><hr class='hr1in' /><div class='c2'>
+<hr class='hr2' /><h2 class='heading'><a name='How.can.I.port.my.program.from.TIGCC.to.GTC.3f'></a>How can I port my program from TIGCC to GTC?</h2><div class='c2in'><hr class='hr2in' />
+<p>It all depends on what features your program uses. Here is a list of porting issues:</p>
+<ul><li> <b><code>long long</code><span class='widespace'>&#32;</span>support</b>: GTC does not support them, if you use them you will have to rewrite your code to use two<span class='widespace'>&#32;</span><code>long</code>s instead. In many cases it's very easy to port.
+</li><li> <b><code>asm()</code><span class='widespace'>&#32;</span>vs<span class='widespace'>&#32;</span><a href='extensions.html#asm.7b.7d.statement'><code>asm{}</code></a></b>: the assembly syntax is different between GTC and TIGCC. However if you are familiar with <a href='glossary.html#a68k'>a68k</a> you will be able to use GTC's syntax in no time.
+</li><li> <b><code>float</code>/<code>double</code><span class='widespace'>&#32;</span>support</b>: currently, GTC does not support floats. If your program uses floats, then unless you think you can get rid of them (e.g. if you are only using them for sines and cosines, you can use a pre-computed table instead), you're basically stuck and should definitely continue using TIGCC (unless you're willing to go down to the assembly level). Sorry.
+</li></ul>
+<p>Additionally, you may run into these little behaviour differences:</p>
+<ul><li> <b>Cast constructors</b>: currently, the following code
+<pre>
+int *f(int *dest,int x) {
+    memcpy(dest,(int[4]){x,x+1,x+2},8);
+    return dest;
+}
+</pre>
+is not accepted by GTC because the array constructed is not constant (<code>x</code><span class='widespace'>&#32;</span>is not known at compile time). But you can rewrite it to use a temporary array instead:
+<pre>
+int *f(int *dest,int x) {
+    int temp[4] = {x,x+1,x+2};
+    memcpy(dest,temp,8);
+    return dest;
+}
+</pre>
+</li><li> <b>Calling convention</b>: by default, GTC uses the<span class='widespace'>&#32;</span><code><a href='specificities.html#Default.calling.convention..28regparm.29'>regparm</a>(2,1)</code><span class='widespace'>&#32;</span>convention, while TIGCC uses the<span class='widespace'>&#32;</span><a href='specificities.html#AMS.calling.convention..28stkparm.29'><code>stkparm</code></a><span class='widespace'>&#32;</span>convention. This is only a problem if you have written assembly functions yourself; in this case, you have to specify the calling convention you use in the prototype, e.g.:
+<pre>
+asm {
+upper_8_bits:
+    move.b 4(a7),d0
+    rts
+};
+char upper_8_bits(long x);
+</pre>
+would become
+<pre>
+asm {
+upper_8_bits:
+    move.b 4(a7),d0
+    rts
+};
+char upper_8_bits(long x) __attribute__((stkparm));
+</pre>
+</li></ul>
+<p>This list may not be exhaustive, but I will be happy to hear about any problems you might have that are not mentioned in this list.</p>
+</div></div>
+<div class='c2'>
+<hr class='hr2' /><h2 class='heading'><a name='How.can.I.make.sure.my.GTC.program.can.be.compiled.with.TIGCC.too.3f'></a>How can I make sure my GTC program can be compiled with TIGCC too?</h2><div class='c2in'><hr class='hr2in' />
+<p>You should not have much trouble compiling GTC programs with TIGCC as GTC was designed to introduce as few incompatibilities as possible. However, if you use low-level features like assembly you might run into some problems:</p>
+<ul><li> See if your program uses <a href='extensions.html#GTC-specific.extensions'>GTC-specific extensions</a>. For example, if you really need to use a short bit of assembly you can use conditional compilation to turn a GTC-only program like this one:
+<pre>
+asm {
+turn_calculator_off:
+    trap #4
+    rts
+};
+</pre>
+into this more portable program:
+<pre>
+#ifdef __GTC__
+/* assembly code using GTC's <a href='extensions.html#asm.7b.7d.statement'><code>asm{}</code></a> syntax */
+asm {
+turn_calculator_off:
+    trap #4
+    rts
+};
+#else
+/* assembly code using TIGCC's <code>asm()</code> syntax */
+asm("
+turn_calculator_off:
+    trap #4
+    rts
+");
+#endif
+</pre>
+</li><li> The default calling convention is different, so if you define your own assembly functions and call them from C code make sure their prototypes are properly specified with<span class='widespace'>&#32;</span><a href='specificities.html#Default.calling.convention..28regparm.29'><code>regparm</code></a>.
+</li></ul></div></div>
+</div></div></div>
+</body>
+</html>

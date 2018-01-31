@@ -1,0 +1,5 @@
+#var _RC_INDEX_romcall(t,a,i) D(0x##i)
+#var _RC_INDEX_romcall_addr(i) D(0x##i)
+#var _ROMCALL_INDEX(name) D(_RC_INDEX##name)
+#var ROMCALL_INDEX(name) D(_ROMCALL_INDEX(name))
+#var ROMCALL_OFFSET(name) D((_ROMCALL_INDEX(name)*4))

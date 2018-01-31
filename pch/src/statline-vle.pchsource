@@ -1,0 +1,15 @@
+
+#var FALSE D(0)
+#var TRUE D(1)
+
+#var SCR_RECT typedef union{struct{unsigned char x0,y0,x1,y1;}xy;unsigned long l;}SCR_RECT;
+#var SCR_STATE typedef struct{void*ScrAddr;unsigned char XMax,YMax;short CurFont,CurAttr,CurX,CurY;SCR_RECT CurClip;}SCR_STATE;
+
+#var WIN_RECT typedef struct{short x0,y0,x1,y1;}WIN_RECT;
+#var WINDOW typedef struct WindowStruct{unsigned short Flags;unsigned char CurFont;unsigned char CurAttr;unsigned char Background;short TaskId;short CurX,CurY;short CursorX,CursorY;SCR_RECT Client;SCR_RECT Window;SCR_RECT Clip;SCR_RECT Port;unsigned short DupScr;struct WindowStruct*Next;char*Title;SCR_STATE savedScrState;unsigned char Reserved[16];}WINDOW;
+#var ST_busy D(_rom_call(void,(short),E2))
+#var ST_eraseHelp D(_rom_call(short,(void),E3))
+#var ST_folder D(_rom_call(void,(const char*),E4))
+#var ST_helpMsg D(_rom_call(void,(const char*),E6))
+#var ST_refDsp D(_rom_call(void,(short),EB))
+#var ST_showHelp D(_rom_call(void,(const char*),E6))

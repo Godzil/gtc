@@ -1,0 +1,74 @@
+ *)
+*)
+*,
+int x
+int y
+int z
+int a
+int b
+int c
+register 
+unsigned 
+signed 
+volatile 
+void _(
+int _(
+short _(
+BOOL _(
+long _(
+ *_(
+*_(
+const 
+void,(
+char,(
+int,(
+short,(
+long,(
+float,(
+void
+char
+int
+short
+long
+float
+typedef struct
+typedef 
+Gray
+_RR(
+,15
+,(
+),
+({
+})
+_rom_call(
+_rom_call_addr(
+FILE*
+__ATTR_LIB_ASM__
+__ATTR_LIB_C__
+__ATTR_TIOS__
+__ATTR_
+ __
+__
+ *
+0x
+0xFFF
+CALCULATOR
+SCR_RECT
+WIN_RECT
+@@move
+move
+.l
+.w
+.b
+999
+_rowread
+__gray_
+HANDLE
+HSym
+SYM_ENTRY
+SYM_STR
+ESI
+c>=
+c<=
+c==
+addr

@@ -1,0 +1,67 @@
+ #include "inclgen"
+ #include "genle"
+ #ifdef RESOURCE
+ FILE *resf=0;
+ #ifdef RES_TYPE
+ RES_TYPE *data=0;
+ #else
+ void *data=0;
+ #endif
+ #endif
+ DSCREEN *scr1=0,*scr2=0,*sc=0;
+ #ifdef DISP_SCR
+ DSCREEN *sd=0;
+ #endif
+ 
+ int curscr=0;
+ void gl_main();
+ void gl_upd() {
+  if (!curscr) {
+   gl_set_dscreen_int(
+ #ifdef DISP_SCR
+    sd=
+ #endif
+    scr1);
+   gl_set_dscreen_function(sc=scr2);
+  } else {
+   gl_set_dscreen_int(
+ #ifdef DISP_SCR
+    sd=
+ #endif
+    scr2);
+   gl_set_dscreen_function(sc=scr1);
+  }
+  curscr=~curscr;
+ }
+ int gl_load() {
+  int hd;
+  gl_init();
+  gl_init_dscreen(&scr1, &hd);
+  if (!hd) goto nohd;
+  gl_push_hd(hd);
+  gl_init_dscreen(&scr2, &hd);
+  if (!hd) goto nohd;
+  gl_push_hd(hd);
+  gl_upd();
+ #ifdef RESOURCE
+  resf=fopen(RESOURCE,"rb");
+  if (!resf) goto nohd;
+  (void *)data=*(void **)resf;
+ #ifdef GFX_RES
+  gl_set_spr_xy(0,0);
+  gl_set_spr_tile(data);
+ #endif
+ #endif
+  return 1;
+ nohd:
+  return 0;
+ }
+ void _main() {
+  if (gl_load()) gl_main();
+ #ifdef RESOURCE
+  if (resf) fclose(resf);
+ #endif
+  gl_wait_no_key();
+  gl_free_hd();
+  gl_quit();
+ }

@@ -1,0 +1,12 @@
+
+#var BN typedef struct{unsigned char Len;unsigned char Data[];}BN;
+#var MD5_CTX typedef struct{unsigned long state[4];unsigned long count[2];unsigned char buffer[64];}MD5_CTX;
+#var BN_power17Mod D(_rom_call(void,(BN*,const BN*,const BN*),122))
+#var BN_powerMod D(_rom_call(void,(BN*,const BN*,const BN*,const BN*),123))
+#var BN_prodMod D(_rom_call(void,(BN*,const BN*,const BN*),124))
+#var cdecrypt D(_rom_call(void,(BN*,char*,long,BN*),127))
+#var MD5Done D(_rom_call(void,(BN*,MD5_CTX*),257))
+#var MD5Final D(_rom_call(void,(unsigned char*,MD5_CTX*),256))
+#var MD5Init D(_rom_call(void,(MD5_CTX*),254))
+#var MD5Update D(_rom_call(void,(MD5_CTX*,unsigned char*,short),255))
+

@@ -1,0 +1,42 @@
+ #include "inclgen"
+ #include "genle"
+ #include "sccomm"
+ #include "scliba"
+ #ifdef RESOURCE
+ FILE *resf;
+ #endif
+ 
+ void gl_main();
+ int gl_load() {
+  GLB
+  int hd;
+  gl_init();
+  gl_init_dscreen(&g scr1, &hd);
+  if (!hd) goto nohd;
+  gl_push_hd(hd);
+  gl_init_dscreen(&g scr2, &hd);
+  if (!hd) goto nohd;
+  gl_push_hd(hd);
+  gl_upd();
+ #ifdef RESOURCE
+  resf=fopen(RESOURCE,"rb");
+  if (!resf) goto nohd;
+  (void *)g data=*(void **)resf;
+ #ifdef GFX_RES
+  gl_set_spr_xy(0,0);
+  gl_set_spr_tile(g data);
+ #endif
+ #endif
+  return 1;
+ nohd:
+  return 0;
+ }
+ void _main() {
+  if (gl_load()) gl_main();
+ #ifdef RESOURCE
+  if (resf) fclose(resf);
+ #endif
+  gl_wait_no_key();
+  gl_free_hd();
+  gl_quit();
+ }

@@ -1,0 +1,29 @@
+#var __HS_pushEmptyFIFONode__type__ typedef void(*__HS_pushEmptyFIFONode__type__)(short)__ATTR_TIOS__;
+
+
+
+#var H_NULL D(0)
+#var FALSE D(0)
+#var TRUE D(1)
+
+#var ESQ typedef unsigned char ESQ;
+#var HANDLE typedef unsigned short HANDLE;
+#var MULTI_EXPR typedef struct{unsigned short Size;ESQ Expr[];}MULTI_EXPR;
+#var FIFO_ELEMENT typedef struct{short ScreenLeft;long ScreenBottom;long XStart;unsigned short Width;unsigned short Height;short Top;HANDLE Expr;short TooLong;short PrettyPrint;unsigned short Exp;unsigned short Fix;}FIFO_ELEMENT;
+#var FIFO_NODE typedef struct{FIFO_ELEMENT Entry;FIFO_ELEMENT Ans;HANDLE Prev;HANDLE Next;}FIFO_NODE;
+#var HomeExecute D(_rom_call(void,(const char*,short),10E))
+#var HomePushEStack D(_rom_call(void,(void),10F))
+#var HomeStore void HomeStore(void)__ATTR_LIB_ASM__;
+#var HomeStorePair void HomeStorePair(HANDLE,HANDLE)__ATTR_LIB_C__;
+#var HS_chopFIFO D(_rom_call(void,(void),23C))
+#var HS_countFIFO D(_rom_call(unsigned short,(void),23D))
+#var HS_deleteFIFONode D(_rom_call(HANDLE,(HANDLE),23E))
+#var HS_freeAll D(_rom_call(void,(void),23F))
+#var HS_freeFIFONode D(_rom_call(void,(HANDLE),240))
+#var HS_getAns D(_rom_call(HANDLE,(short),241))
+#var HS_getEntry D(_rom_call(HANDLE,(short),242))
+#var HS_getFIFONode D(_rom_call(HANDLE,(short),243))
+#var HS_newFIFONode D(_rom_call(HANDLE,(void),245))
+#var HS_popEStack D(_rom_call(HANDLE,(void),244))
+#var HS_pushEmptyFIFONode D((*(__get_HS_pushEmptyFIFONode()))) __HS_pushEmptyFIFONode__type__ __get_HS_pushEmptyFIFONode(void)__ATTR_LIB_C__;
+#var HS_pushFIFONode D(_rom_call(void,(HANDLE),246))
